@@ -1,0 +1,96 @@
+@import '../../../../assets/css/variables_and_mixins';
+
+#content {
+    @include flex_center();
+    padding: 48px 24px;
+
+    .wrap {
+        max-width: 1180px;
+        width: 100%;
+
+        .featured_img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            width: 100%;
+            height: 585px;
+            border: 10px solid $brand_1_50;
+            box-shadow: 0px 1px 4px rgb(0 0 0 / 20%);
+            margin-bottom: 48px;
+
+            img {
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: auto;
+                height: auto;
+            }
+        }
+
+        section {
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            @include heading_3();
+            color: $neutral_600;
+            margin-bottom: 16px;
+        }
+
+        p, li {
+            @include text_base_400();
+            color: $neutral_500;
+            margin-bottom: 16px;
+        }
+
+        img {
+            width: 100%;
+            margin-bottom: 16px;
+            border-radius: 12px;
+        }
+
+        ul {
+            padding-left: 16px;
+
+            li {
+                position: relative;
+                padding-left: 8px;
+                list-style-type: disc;
+            }
+        }
+
+        ol {
+            padding-left: 16px;
+
+            li {
+                position: relative;
+                padding-left: 8px;
+                list-style-type: decimal;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:980px) {
+    
+    #content {
+        .wrap {
+            .featured_img {
+                height: 60vw;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

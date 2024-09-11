@@ -1,0 +1,142 @@
+body {
+  position: relative;
+}
+
+#content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+#content .wrap {
+  max-width: 1180px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 32px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#content .wrap .section_heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#content .wrap .section_heading .preheading {
+  font-size: 1.125rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #FF9F1C;
+}
+#content .wrap .section_heading > h2 {
+  font-size: 2.25rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2EC4B6;
+  max-width: 890px;
+  width: 100%;
+}
+#content .wrap form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+#content .wrap form .form_control {
+  display: flex;
+  flex-direction: column;
+  -moz-column-gap: auto;
+       column-gap: auto;
+  row-gap: 8px;
+  max-width: 48.5%;
+  width: 100%;
+}
+#content .wrap form .form_control label {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#content .wrap form .form_control input {
+  width: 100%;
+}
+#content .wrap form .form_control.message {
+  max-width: 100%;
+}
+#content .wrap form .form_control.message textarea {
+  height: 200px;
+}
+#content .wrap form .actions {
+  padding-top: 24px;
+}
+#content .wrap form .actions .button {
+  border: none;
+  background-color: #FF9F1C;
+  color: #EEF9F8;
+  padding: 12px 32px;
+  font-size: 20px;
+}
+#content .coconut_bg_left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -2;
+}
+#content .coconut_bg_right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -2;
+}
+#content .land_bg {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: -1;
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  #content .wrap form {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  #content .wrap form .form_control {
+    max-width: 50%;
+    padding-right: 24px;
+  }
+}
+@media (max-width: 780px) {
+  #content .wrap {
+    padding: 24px;
+  }
+  #content .wrap > h2 {
+    font-size: 1.5rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  #content .wrap form {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  #content .wrap form .form_control {
+    max-width: 100%;
+    padding-right: 0px;
+  }
+}
+@media (max-width: 480px) {
+  #content .wrap form .actions .button {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=contact_us.css.map */

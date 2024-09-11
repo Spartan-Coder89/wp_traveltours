@@ -1,0 +1,151 @@
+$brand_1_900: #2EC4B6;
+$brand_1_800: #51CABD;
+$brand_1_700: #6BD0C4;
+$brand_1_600: #81D6CB;
+$brand_1_500: #95DCD3;
+$brand_1_400: #A8E2DA;
+$brand_1_300: #BAE8E1;
+$brand_1_200: #CCEEE9;
+$brand_1_100: #DDF4F0;
+$brand_1_50: #EEF9F8;
+
+$brand_2_900: #FF9F1C;
+$brand_2_800: #FFA945;
+$brand_2_700: #FFB460;
+$brand_2_600: #FFBD77;
+$brand_2_500: #FFC78C;
+$brand_2_400: #FFD1A0;
+$brand_2_300: #FFDAB4;
+$brand_2_200: #FFE4C7;
+$brand_2_100: #FFEDDA;
+$brand_2_50: #FFF6EC;
+
+$neutral_900: #000202;
+$neutral_800: #091111;
+$neutral_700: #1F2626;
+$neutral_600: #363D3D;
+$neutral_500: #4F5655;
+$neutral_400: #6A6F6F;
+$neutral_300: #868A8A;
+$neutral_200: #A3A6A6;
+$neutral_100: #C1C3C3;
+$neutral_50: #DFE1E1;
+
+$images_uri: '../../../../assets/images';
+
+@mixin heading_1 {
+    font-size: 3rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin heading_2 {
+    font-size: 2.25rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin heading_3 {
+    font-size: 1.875rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin heading_4 {
+    font-size: 1.5rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin heading_5 {
+    font-size: 1.25rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin text_lg_400 {
+    font-size: 1.125rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin text_lg_700 {
+    font-size: 1.125rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin text_base_400 {
+    font-size: 1rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin text_base_700 {
+    font-size: 1rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin text_sm_400 {
+    font-size: 0.875rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin text_sm_700 {
+    font-size: 0.875rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin text_xs_400 {
+    font-size: 0.75rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin text_xs_700 {
+    font-size: 0.75rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@mixin flex_vertical {
+    display: flex;
+    flex-direction: column;
+}
