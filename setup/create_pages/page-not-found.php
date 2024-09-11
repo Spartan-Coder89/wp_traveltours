@@ -1,5 +1,9 @@
 <?php
 
+if ( !defined( 'ABSPATH' ) ) {
+  die;
+}
+
 if (is_null(get_page_by_path('page-not-found'))){
 
   wp_insert_post([

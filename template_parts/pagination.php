@@ -1,3 +1,9 @@
+<?php 
+    if ( !defined( 'ABSPATH' ) ) {
+        die;
+    }
+?>
+
 <div id="pagination">
     <div class="previous">
         <a href="">

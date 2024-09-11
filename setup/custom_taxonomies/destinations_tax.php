@@ -1,5 +1,9 @@
 <?php
 
+if ( !defined( 'ABSPATH' ) ) {
+  die;
+}
+
 register_taxonomy('destinations', ['destinations'], [
   'labels'                       => [
     'name'                       => 'Destinations',

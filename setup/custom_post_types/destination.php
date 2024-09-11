@@ -1,5 +1,9 @@
 <?php
 
+if ( !defined( 'ABSPATH' ) ) {
+  die;
+}
+
 register_post_type('destinations', [
   'labels'               => [
     'name'               => 'Destinations',

@@ -1,3 +1,9 @@
+<?php 
+    if ( !defined( 'ABSPATH' ) ) {
+        die;
+    }
+?>
+
 <div id="inner_page_banner">
     <div class="wrap">
         <div class="inner_page_title">

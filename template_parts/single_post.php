@@ -1,3 +1,9 @@
+<?php 
+    if ( !defined( 'ABSPATH' ) ) {
+        die;
+    }
+?>
+
 <main>
     <?php get_template_part( 'template_parts/inner_page_banner' ); ?>
     <div id="content">

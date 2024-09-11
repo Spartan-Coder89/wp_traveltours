@@ -1,3 +1,9 @@
+<?php 
+    if ( !defined( 'ABSPATH' ) ) {
+        die;
+    }
+?>
+
 <main>
     <section id="above_the_fold">
         <div class="wrap">
