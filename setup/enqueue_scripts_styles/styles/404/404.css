@@ -1,0 +1,125 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  overflow: hidden;
+}
+main .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+main .content h1 {
+  font-size: 3rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 244px;
+  color: #2EC4B6;
+}
+main .content > p {
+  font-size: 1.125rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #4F5655;
+  text-align: center;
+}
+main .content .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 12px 0px;
+}
+main .content .menu > a {
+  font-size: 1.875rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+  position: relative;
+}
+main .content .menu > a::before {
+  content: "";
+  width: 0px;
+  height: 2px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background-color: #2EC4B6;
+  transition: width 300ms;
+}
+main .content .menu > a:hover {
+  color: #2EC4B6;
+}
+main .content .menu > a:hover::before {
+  width: 100%;
+}
+main .sky_bg,
+main .coconut_left_bg,
+main .coconut_right_bg,
+main .land_bg {
+  position: absolute;
+  z-index: -1;
+}
+main .coconut_left_bg {
+  left: 0px;
+  bottom: -50px;
+}
+main .coconut_right_bg {
+  right: 0px;
+  bottom: 80px;
+}
+main .land_bg {
+  left: 0px;
+  bottom: 0px;
+}
+
+@media (max-width: 1366px) {
+  main .coconut_left_bg {
+    width: 30vw;
+    height: auto;
+  }
+  main .coconut_right_bg {
+    width: 25vw;
+    height: auto;
+    bottom: 0px;
+  }
+}
+@media (max-width: 780px) {
+  main .content h1 {
+    font-size: 122px;
+  }
+  main .content > p {
+    font-size: 1rem;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+  main .content .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  main .content .menu > a {
+    font-size: 1.25rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}/*# sourceMappingURL=404.css.map */

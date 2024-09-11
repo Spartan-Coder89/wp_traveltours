@@ -1,0 +1,125 @@
+@import './variables_and_mixins';
+
+main {
+    @include flex_center();
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    overflow: hidden;
+
+    .content {
+        @include flex_vertical();
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        h1 {
+            @include heading_1();
+            font-size: 244px;
+            color: $brand_1_900;
+        }
+
+        > p {
+            @include text_lg_700();
+            color: $neutral_500;
+            text-align: center;
+        }
+
+        .menu {
+            @include flex_center();
+            gap: 24px;
+            padding: 12px 0px;
+
+            > a {
+                @include heading_3();
+                color: $neutral_500;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    width: 0px;
+                    height: 2px;
+                    position: absolute;
+                    left: 0px;
+                    bottom: 0px;
+                    background-color: $brand_1_900;
+                    transition: width 300ms;
+                }
+
+                &:hover {
+                    color: $brand_1_900;
+                }
+
+                &:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .sky_bg,
+    .coconut_left_bg,
+    .coconut_right_bg,
+    .land_bg {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .coconut_left_bg {
+        left: 0px;
+        bottom: -50px;
+    }
+
+    .coconut_right_bg {
+        right: 0px;
+        bottom: 80px;
+    }
+
+    .land_bg {
+        left: 0px;
+        bottom: 0px;
+    }
+}
+
+@media(max-width:1366px) {
+    
+    main {
+        .coconut_left_bg {
+            width: 30vw;
+            height: auto;
+        }
+    
+        .coconut_right_bg {
+            width: 25vw;
+            height: auto;
+            bottom: 0px;
+        }
+    }
+}
+
+@media(max-width:780px) {
+
+    main {
+        .content {
+            h1 {
+                font-size: 122px;
+            }
+
+            > p {
+                @include text_base_700
+            }
+
+            .menu {
+                @include flex_center();
+                gap: 12px;
+    
+                > a {
+                    @include heading_5();
+                }
+            }
+        }
+    }
+}

@@ -6,7 +6,11 @@ if ( !defined( 'ABSPATH' ) ) {
 
 global $post;
 
-get_header(); 
+if ( is_404() ) {
+    get_header('404'); 
+} else {
+    get_header();
+}
 
 if ( is_page('home') ) {
     get_template_part( 'template_parts/home' );
@@ -33,7 +37,9 @@ if ( is_page('home') ) {
     get_template_part( 'template_parts/single_post' );
 
 } else {
-    //  Do nothing
+    get_template_part( 'template_parts/404' );
 }
 
-get_footer();
+if ( !is_404() ) {
+    get_footer();
+}
