@@ -7,39 +7,7 @@
 <div id="inner_page_banner">
     <div class="wrap">
         <div class="inner_page_title">
-            <?php 
-                if ( is_page('about-us') ) {
-                    echo '<p>About us</p>';
-                    echo '<h1>Get To Know Us</h1>';
-                
-                } else if ( is_page('appointment') ) {
-                    echo '<p>Contact Us</p>';
-                    echo '<h1>Book Your Destination</h1>';
-                
-                } else if ( is_page('blog') ) {
-                    echo '<p>What’s the latest</p>';
-                    echo '<h1>Blog and Articles</h1>';
-                
-                } else if ( is_page('contact-us') ) {
-                    echo '<p>Contact Us</p>';
-                    echo '<h1>Let’s Get Connected</h1>';
-                
-                } else if ( is_page('explore-destinations') ) {
-                    echo '<p>Explore</p>';
-                    echo '<h1>Destinations</h1>';
-                
-                } else if ( is_singular('destinations') ) {
-                    echo '<p>Destination</p>';
-                    echo '<h1>'. get_the_title( $post->ID ) .'</h1>';
-                
-                } else if ( is_singular('post') ) {
-                    echo '<p>Blog post</p>';
-                    echo '<h1>'. get_the_title( $post->ID ) .'</h1>';
-                
-                } else {
-                    //  Do nothing
-                }
-            ?>
+            <?php echo get_inner_title(); ?>
         </div>
     </div>
 

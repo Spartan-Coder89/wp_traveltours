@@ -1,0 +1,896 @@
+#above_the_fold {
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(46, 196, 182, 0.25) 50%, rgba(46, 196, 182, 0) 100%), url("http://traveltours.test/wp-content/themes/wp_traveltours/assets/images/above_the_fold.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#above_the_fold .wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 1420px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+#above_the_fold .wrap .social_icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+#above_the_fold .wrap .headline h2 {
+  font-family: "Yeseva One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 6rem;
+  color: #EEF9F8;
+  line-height: 130%;
+}
+#above_the_fold .wrap .headline p {
+  font-family: "Nunito", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 130%;
+  color: #EEF9F8;
+}
+#above_the_fold .wrap .cta {
+  padding-top: 16px;
+}
+#above_the_fold .wrap .cta .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 32px;
+  background-color: #2EC4B6;
+  color: #EEF9F8;
+  font-size: 1.25rem;
+  max-width: 275px;
+  width: 100%;
+  cursor: pointer;
+}
+#above_the_fold .wave_bottom {
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  width: 100%;
+}
+
+#about_us {
+  position: relative;
+  padding: 48px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#about_us .wrap {
+  max-width: 1420px;
+  width: 100%;
+}
+#about_us .wrap .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#about_us .wrap .top .content {
+  width: 710px;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#about_us .wrap .top .content > p {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#about_us .wrap .top .content .cta {
+  padding-top: 24px;
+}
+#about_us .wrap .top .content .cta .button {
+  gap: 8px;
+  background-color: #FF9F1C;
+  color: #FFF6EC;
+  max-width: 165px;
+  width: 100%;
+}
+#about_us .wrap .top .img {
+  width: 50%;
+  position: relative;
+}
+#about_us .wrap .top .img .bg_pic {
+  background-color: red;
+  position: absolute;
+  top: 0px;
+  left: -14px;
+  max-width: 612px;
+  width: 100%;
+  height: 460px;
+  z-index: -1;
+  transform: rotate(6deg);
+  border: 10px solid #EEF9F8;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2), 0px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  background-image: url("http://traveltours.test/wp-content/themes/wp_traveltours/assets/images/about_us_img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#about_us .wrap .top .img .pic {
+  background-color: grey;
+  max-width: 612px;
+  width: 100%;
+  height: 460px;
+  transform: rotate(12deg);
+  border: 10px solid #EEF9F8;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2), 0px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  background-image: url("http://traveltours.test/wp-content/themes/wp_traveltours/assets/images/about_us_img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#about_us .wrap .top .img .pin {
+  position: absolute;
+  z-index: 1;
+  top: -27px;
+  left: 50%;
+}
+#about_us .wrap .top .img .bg_passport {
+  position: absolute;
+  z-index: -2;
+  left: -115px;
+  bottom: -41px;
+}
+#about_us .wrap .top .img .bg_tickets {
+  position: absolute;
+  z-index: -2;
+  top: -48px;
+  right: 110px;
+}
+#about_us .bg_coconut_right {
+  position: absolute;
+  right: 0px;
+  z-index: -1;
+  bottom: -650px;
+}
+
+#pointers {
+  padding: 96px 24px;
+}
+#pointers .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 160px;
+}
+#pointers .wrap .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 210px;
+  width: 100%;
+}
+#pointers .wrap .item h2 {
+  font-size: 1.5rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #1F2626;
+}
+#pointers .wrap .item p {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: #4F5655;
+}
+
+#featured_destination {
+  padding: 48px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#featured_destination .wrap {
+  max-width: 1420px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+#featured_destination .wrap .img {
+  position: relative;
+  max-width: 820px;
+  width: 56%;
+  height: 530px;
+}
+#featured_destination .wrap .img .image {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://placehold.co/600x400");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid #EEF9F8;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2), 0px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+#featured_destination .wrap .img .bg_coconut {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  top: -150px;
+  left: -172px;
+}
+#featured_destination .wrap .img .bg_location {
+  position: absolute;
+  bottom: -60px;
+  right: -80px;
+  z-index: -1;
+}
+#featured_destination .wrap .details {
+  width: 42.8%;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#featured_destination .wrap .details .key_features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0px;
+}
+#featured_destination .wrap .details .key_features .feature {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+}
+#featured_destination .wrap .details .key_features .feature > div {
+  max-width: 93%;
+  width: 100%;
+}
+#featured_destination .wrap .details .key_features .feature > div .title {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #363D3D;
+  margin-bottom: 6px;
+}
+#featured_destination .wrap .details .key_features .feature > div .description {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+
+#explore_destination {
+  overflow: hidden;
+  position: relative;
+  background-color: #2EC4B6;
+  padding: 160px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#explore_destination .wrap {
+  max-width: 1420px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 64px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+#explore_destination .wrap .section_title > h2 {
+  color: #EEF9F8;
+}
+#explore_destination .wrap .section_title > p {
+  color: #EEF9F8;
+}
+#explore_destination .wrap .carousel_wrap {
+  padding: 0px 24px;
+}
+#explore_destination .wrap .carousel_wrap .carousel .slick-arrow {
+  opacity: 0;
+}
+#explore_destination .wrap .carousel_wrap .carousel .item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+  gap: 18px;
+}
+#explore_destination .wrap .carousel_wrap .carousel .item .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 325px;
+  background-image: url("https://placehold.co/600x400");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid #EEF9F8;
+  border-radius: 12px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+#explore_destination .wrap .carousel_wrap .carousel .item .img .button {
+  display: inline-block;
+  color: #EEF9F8;
+  background-color: #2EC4B6;
+  opacity: 0;
+  transition: 500ms;
+}
+#explore_destination .wrap .carousel_wrap .carousel .item .img:hover .button {
+  opacity: 1;
+}
+#explore_destination .wrap .carousel_wrap .carousel .item .details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#explore_destination .wrap .carousel_wrap .carousel .item .details h2 {
+  font-size: 1.25rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #DDF4F0;
+}
+#explore_destination .wrap .carousel_wrap .carousel .item .details p {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #DDF4F0;
+}
+#explore_destination .wrap .carousel_nav .arrow_left {
+  cursor: pointer;
+}
+#explore_destination .wrap .carousel_nav .arrow_left:hover path {
+  fill: #EEF9F8;
+}
+#explore_destination .wrap .carousel_nav .arrow_right {
+  cursor: pointer;
+}
+#explore_destination .wrap .carousel_nav .arrow_right:hover path {
+  fill: #EEF9F8;
+}
+#explore_destination .wave_top {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  width: 100%;
+  z-index: 1;
+}
+#explore_destination .wave_bottom {
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  width: 100%;
+  z-index: 1;
+}
+#explore_destination .popular_destinations_bg {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+}
+
+#testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 64px 20px;
+}
+#testimonial .wrap {
+  max-width: 1180px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#testimonial .wrap .testimonial_slick_wrap {
+  position: relative;
+  padding: 0px 32px;
+}
+#testimonial .wrap .testimonial_slick_wrap .testimonial_slick .item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 24px;
+}
+#testimonial .wrap .testimonial_slick_wrap .testimonial_slick .item .img {
+  width: 72px;
+  height: 72px;
+  border-radius: 1000px;
+  background: url("http://traveltours.test/wp-content/themes/wp_traveltours/assets/images/avatar_placeholder.png"), #DDF4F0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#testimonial .wrap .testimonial_slick_wrap .testimonial_slick .item .content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 1020px;
+  width: 100%;
+}
+#testimonial .wrap .testimonial_slick_wrap .testimonial_slick .item .content .testimonial_content {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#testimonial .wrap .testimonial_slick_wrap .testimonial_slick .item .content .name {
+  font-size: 1.25rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #363D3D;
+}
+#testimonial .wrap .testimonial_slick_wrap .testimonial_slick .item .content .position {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#testimonial .wrap .testimonial_slick_wrap .testimonial_slick .slick-arrow {
+  opacity: 0;
+}
+#testimonial .wrap .testimonial_slick_wrap .testimonial_bg {
+  position: absolute;
+  top: -95px;
+  right: 0px;
+  z-index: -1;
+}
+#testimonial .wrap .carousel_nav .arrow_left {
+  cursor: pointer;
+}
+#testimonial .wrap .carousel_nav .arrow_left:hover path {
+  fill: #2EC4B6;
+}
+#testimonial .wrap .carousel_nav .arrow_right {
+  cursor: pointer;
+}
+#testimonial .wrap .carousel_nav .arrow_right:hover path {
+  fill: #2EC4B6;
+}
+
+#contact_us {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 64px 20px;
+}
+#contact_us .wrap {
+  max-width: 1180px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+#contact_us .wrap .left {
+  max-width: 670px;
+  width: 100%;
+  position: relative;
+}
+#contact_us .wrap .left img {
+  width: 100%;
+}
+#contact_us .wrap .left .contact_us_luggage {
+  position: absolute;
+  z-index: -1;
+  right: 130px;
+  bottom: -145px;
+}
+#contact_us .wrap .left .contact_us_passport {
+  position: absolute;
+  z-index: -1;
+  top: -5px;
+  right: -105px;
+}
+#contact_us .wrap .right {
+  max-width: 670px;
+  width: 100%;
+  margin-left: -160px;
+  padding-top: 100px;
+  position: relative;
+}
+#contact_us .wrap .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+#contact_us .wrap .right form .pin {
+  position: absolute;
+  left: 45px;
+  top: -45px;
+  z-index: 1;
+}
+#contact_us .wrap .right form .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#contact_us .wrap .right form .inputs input {
+  width: 100%;
+}
+#contact_us .wrap .right form .inputs textarea {
+  width: 100%;
+  height: 200px;
+}
+#contact_us .wrap .right form .cta .button {
+  background-color: #2EC4B6;
+  color: #EEF9F8;
+  max-width: 230px;
+  width: 100%;
+  padding: 12px 32px;
+  font-size: 20px;
+}
+#contact_us .coconut_bg_left {
+  position: absolute;
+  left: 0px;
+  z-index: -1;
+}
+#contact_us .coconut_bg_right {
+  position: absolute;
+  right: 0px;
+  bottom: -400px;
+  z-index: -1;
+}
+
+#latest_blog {
+  padding: 96px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#latest_blog .wrap {
+  max-width: 1180px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#latest_blog .wrap .blogs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 24px;
+}
+#latest_blog .wrap .blogs .blog_item {
+  max-width: 375px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#latest_blog .wrap .blogs .blog_item .img {
+  width: 100%;
+  height: 290px;
+  background-image: url("https://placehold.co/600x400");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+#latest_blog .wrap .blogs .blog_item .details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0px 16px;
+}
+#latest_blog .wrap .blogs .blog_item .details .post_date {
+  font-size: 0.875rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #868A8A;
+}
+#latest_blog .wrap .blogs .blog_item .details .blog_title {
+  font-size: 1.25rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2EC4B6;
+}
+#latest_blog .wrap .blogs .blog_item .details .excerpt {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #868A8A;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+#latest_blog .wrap .blogs .blog_item .details .read_more {
+  font-size: 1.125rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #FF9F1C;
+}
+
+@media (max-width: 1420px) {
+  #above_the_fold .wrap .headline h2 {
+    font-size: 5rem;
+  }
+  #above_the_fold .wrap .headline p {
+    font-size: 1.5rem;
+  }
+  #about_us .wrap {
+    max-width: 780px;
+  }
+  #about_us .wrap .top .content {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 96px;
+  }
+  #about_us .wrap .top .img {
+    max-width: 660px;
+    width: 100%;
+  }
+  #pointers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #pointers .wrap {
+    max-width: 780px;
+    gap: 32px;
+  }
+  #pointers .wrap .item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #pointers .wrap .item h2 {
+    text-align: left;
+  }
+  #pointers .wrap .item p {
+    text-align: left;
+  }
+  #featured_destination .wrap {
+    max-width: 780px;
+  }
+  #featured_destination .wrap .img {
+    max-width: 100%;
+    width: 100%;
+    height: 37vw;
+  }
+  #featured_destination .wrap .details {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #featured_destination .wrap .details .key_features .feature {
+    flex-wrap: nowrap;
+  }
+  #explore_destination .wrap .carousel_wrap .carousel .item .img {
+    height: 23vw;
+  }
+  #testimonial .wrap .testimonial_slick_wrap .testimonial_bg {
+    top: 30px;
+    right: auto;
+    left: 100px;
+  }
+  #contact_us .wrap {
+    max-width: 780px;
+    display: flex;
+    flex-direction: column;
+  }
+  #contact_us .wrap .left {
+    max-width: 100%;
+  }
+  #contact_us .wrap .left > img {
+    margin-right: -100px;
+  }
+  #contact_us .wrap .right {
+    max-width: 100%;
+    padding-top: 0px;
+    margin-left: 0px;
+    margin-top: -100px;
+  }
+  #contact_us .wrap .right > form {
+    max-width: 670px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: -15px;
+  }
+  #contact_us .wrap .right > form .pin {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #contact_us .wrap .left .contact_us_luggage {
+    right: auto;
+    left: -65px;
+    bottom: -145px;
+  }
+  #contact_us .wrap .left .contact_us_passport {
+    top: -65px;
+    right: -15px;
+  }
+  #latest_blog .wrap .blogs {
+    justify-content: flex-start;
+  }
+  #latest_blog .wrap .blogs .blog_item {
+    max-width: 48%;
+  }
+}
+@media (max-width: 980px) {
+  #above_the_fold .wrap .headline h2 {
+    font-size: 4rem;
+  }
+  #above_the_fold .wrap .headline p {
+    font-size: 1.3rem;
+  }
+  #pointers {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  #pointers .wrap {
+    justify-content: flex-start;
+    gap: 0px;
+  }
+  #pointers .wrap .item {
+    max-width: 50%;
+    padding-right: 24px;
+    padding-bottom: 24px;
+  }
+  #featured_destination .wrap .img {
+    height: 45vw;
+  }
+  #explore_destination {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  #explore_destination .wrap .carousel_wrap .carousel .item .img {
+    height: 30vw;
+  }
+  #latest_blog {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+@media (max-width: 780px) {
+  #above_the_fold .wrap .headline h2 {
+    font-size: 3rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  #about_us .wrap .top .img .pin {
+    width: 5vw;
+    top: -3.5vw;
+  }
+  #about_us .wrap .top .img .pic {
+    max-width: 100%;
+    height: 60vw;
+  }
+  #about_us .wrap .top .img .bg_pic {
+    max-width: 100%;
+    height: 60vw;
+  }
+  #featured_destination .wrap .img {
+    height: 60vw;
+  }
+  #explore_destination .wrap .carousel_wrap .carousel .item {
+    margin: 16px;
+  }
+  #explore_destination .wrap .carousel_wrap .carousel .item .img {
+    height: 60vw;
+  }
+  #contact_us {
+    padding-top: 0px;
+  }
+  #contact_us .wrap .right > form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #contact_us .wrap .right > form .pin {
+    width: 5vw;
+    top: -5.5vw;
+  }
+  #latest_blog {
+    padding-top: 0px;
+  }
+  #latest_blog .wrap .blogs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #latest_blog .wrap .blogs .blog_item {
+    max-width: 640px;
+  }
+  #latest_blog .wrap .blogs .blog_item .img {
+    height: 60vw;
+  }
+}
+@media (max-width: 480px) {
+  #pointers .wrap .item {
+    max-width: 100%;
+    padding-right: 0px;
+  }
+  #pointers .wrap .item h2 {
+    font-size: 1.25rem;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  #explore_destination .wrap .carousel_wrap {
+    padding: 0px;
+  }
+  #testimonial .wrap .testimonial_slick_wrap {
+    padding: 0px;
+  }
+  #testimonial .wrap .testimonial_slick_wrap .testimonial_bg {
+    top: 0px;
+    right: 0px;
+    left: auto;
+  }
+  #contact_us .wrap .right > form {
+    padding: 16px;
+  }
+}/*# sourceMappingURL=home.css.map */

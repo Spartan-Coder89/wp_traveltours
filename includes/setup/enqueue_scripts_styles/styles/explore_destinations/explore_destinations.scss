@@ -1,0 +1,411 @@
+@import '../../../../../assets/css/variables_and_mixins';
+
+#content {
+    padding: 0px 24px;
+    @include flex_center();
+
+    .wrap {
+        max-width: 1420px;
+        width: 100%;
+        @include flex();
+        align-items: flex-start;
+        gap: 24px;
+
+        .sidebar {
+            @include flex_vertical();
+            gap: 32px;
+            max-width: 217px;
+            min-width: 217px;
+            width: 100%;
+            padding: 24px 0px;
+
+            .title {
+                @include flex();
+                gap: 12px;
+                align-items: center;
+                padding-bottom: 16px;
+                border-bottom: 1px solid $neutral_50;
+
+                > p {
+                    @include heading_5();
+                    color: $neutral_500;
+                }
+
+                > svg {
+                    cursor: pointer;
+                    display: none;
+                }
+            }
+
+            .filters {
+                @include flex_vertical();
+                gap: 32px;
+
+                .filter {
+                    @include flex_vertical();
+                    gap: 8px;
+
+                    .label {
+                        @include text_base_700();
+                        color: $neutral_300;
+                    }
+    
+                    > input[type="range"] {
+                        width: 100%;
+                    }
+
+                    .value {
+                        @include text_xs_700;
+                        color: $brand_1_900;
+                    }
+
+                    
+                }
+            }
+
+            .actions {
+                @include flex_vertical();
+                gap: 12px;
+
+                .apply_filters {
+                    @include text_sm_700();
+                    background-color: $brand_1_900;
+                    color: $brand_1_50;
+                    max-width: 135px;
+                }
+
+                .reset_filters {
+                    @include text_sm_700();
+                    background-color: $neutral_100;
+                    color: $neutral_300;
+                    max-width: 135px;
+                }
+            }
+        }
+
+        #destinations_posts_wrap {
+            max-width: 1179px;
+
+            #destinations_posts {
+                @include flex();
+                column-gap: 24px;
+                row-gap: 32px;
+                width: 100%;
+                padding-top: 24px;
+                padding-bottom: 48px;
+                
+                .destination {
+                    @include flex_vertical();
+                    gap: 16px;
+                    max-width: 377px;
+                    width: 100%;
+    
+                    .img {
+                        background-image: url('https://placehold.co/600x400');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        position: relative;
+                        width: 100%;
+                        height: 290px;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        border: 10px solid $brand_1_50;
+                        box-shadow: 0px 1px 4px rgb(0 0 0 / 20%);
+    
+                        .view_trip_wrap {
+                            @include flex_center();
+                            position: absolute;
+                            left: 0px;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, 0.1);
+                            transition: opacity 300ms;
+                            opacity: 0;
+    
+                            .view_trip {
+                                background-color: $brand_1_900;
+                                color: $brand_1_50;
+                                transition: transform 400ms;
+                                transform: translateY(15px);
+                            }
+    
+                            &:hover {
+                                opacity: 1;
+    
+                                .view_trip {
+                                    transform: translateY(0px);
+                                }
+                            }
+                        }
+                    }
+    
+                    .destinations_details {
+                        @include flex_vertical();
+                        gap: 6px;
+                        padding: 0px 16px;
+    
+                        .destination_title {
+                            @include heading_5();
+                            color: $brand_1_900;
+                        }
+    
+                        .destination_excerpt {
+                            @include text_base_400();
+                            color: $neutral_400;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;  
+                            overflow: hidden;
+                        }
+    
+                        .details {
+                            @include flex();
+                            gap: 16px;
+    
+                            .location {
+                                @include flex();
+                                gap: 8px;
+    
+                                > span {
+                                    @include text_base_400();
+                                    color: $neutral_300;
+                                    padding-top: 3px;
+                                }
+                            }
+        
+                            .duration {
+                                @include flex();
+                                gap: 8px;
+    
+                                > span {
+                                    @include text_base_400();
+                                    color: $neutral_300;
+                                    padding-top: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #pagination {
+            @include flex_center();
+            gap: 12px;
+            padding-top: 24px;
+
+            .previous {
+                width: 40px;
+                height: 40px;
+
+                > a {
+                    width: 100%;
+                    height: 100%;
+                    @include flex_center();
+                }
+            }
+
+            .next {
+                width: 40px;
+                height: 40px;
+
+                > a {
+                    width: 100%;
+                    height: 100%;
+                    @include flex_center();
+                }
+            }
+
+            .pages {
+                @include flex_center();
+                gap: 12px;
+
+                > li {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100px;
+
+                    > a {
+                        width: 100%;
+                        height: 100%;
+                        @include flex_center();
+                        @include text_base_400();
+                        color: $neutral_500;
+                    }
+                }
+
+                .current {
+                    background-color: $brand_1_900;
+
+                    a {
+                        @include text_base_700();
+                        color: $brand_1_50;
+                    }
+                }
+            }
+
+            .selection_pages {
+                display: none;
+            }
+        }
+    }
+}
+
+@media(max-width:1468px) {
+
+    #content {    
+        .wrap {
+            @include flex_vertical();
+            align-items: center;
+
+            .sidebar {
+                max-width: 1180px;
+
+                .title {
+                    > svg {
+                        display: block;
+                    }
+                }
+
+                .filters {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 0px;
+
+                    .filter {
+                        max-width: 25%;
+                        width: 100%;
+                        padding-right: 24px;
+                        padding-bottom: 24px;
+
+                        .checkbox_selector {
+                            > label {
+                                width: 85%;
+                            }
+                        }
+                    }
+
+                    .filter.range {
+                        max-width: 50%;
+                    }
+                }
+
+                .actions {
+                    flex-direction: row;
+                }
+            }
+
+            #destinations_posts_wrap {
+                max-width: 100%;
+                padding-bottom: 96px;
+
+                #destinations_posts {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:780px) {
+
+    #content {
+        .wrap {
+            .sidebar {
+                .filters {
+                    .filter.checkboxes {
+                        max-width: 50%;
+                    }
+                }
+            }
+
+            #destinations_posts_wrap {
+                #destinations_posts {
+                    .destination {
+                        max-width: 640px;
+
+                        .img {
+                            height: 60vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:640px) {
+    
+    #content {
+        .wrap {
+            .sidebar {
+                .filters {
+                    .filter.checkboxes {
+                        max-width: 50%;
+                    }
+                }
+            }
+
+            #pagination {
+                gap: 8px;
+
+                .pages {
+                    gap: 8px;
+
+                    > li {
+                        > a {
+                            @include text_sm_400();
+                        }
+                    }
+
+                    > .current {
+                        > a {
+                            @include text_sm_700();
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:480px) {
+
+    #content {
+        .wrap {
+            .sidebar {
+                .filters {
+                    .filter.range {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            #pagination {
+                .pages {
+                    display: none;
+                }
+
+                .selection_pages {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:380px) {
+    #content {
+        .wrap {
+            .sidebar {
+                .filters {
+                    .filter.checkboxes {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

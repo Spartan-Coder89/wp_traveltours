@@ -1,0 +1,334 @@
+#content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 48px 24px;
+  position: relative;
+  overflow: hidden;
+}
+#content .wrap {
+  max-width: 1180px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+#content .wrap > section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#content .wrap > section h2 {
+  font-size: 1.875rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2EC4B6;
+}
+#content .wrap > section p {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#content .wrap .images {
+  width: 100%;
+  border: 10px solid #EEF9F8;
+  border-radius: 16px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+#content .wrap .images #images_carousel .slick-arrow {
+  display: none;
+}
+#content .wrap .images #images_carousel .img {
+  background-image: url("https://placehold.co/600x400");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 585px;
+}
+#content .wrap .images .fullscreen {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 1000px;
+  opacity: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#content .wrap .images .previous {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px 24px;
+  opacity: 0;
+  cursor: pointer;
+}
+#content .wrap .images .next {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px 24px;
+  opacity: 0;
+  cursor: pointer;
+}
+#content .wrap .images:hover .fullscreen,
+#content .wrap .images:hover .previous,
+#content .wrap .images:hover .next {
+  opacity: 1;
+}
+#content .wrap #contact_info .information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+#content .wrap #contact_info .information > section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 33.33%;
+  padding-right: 24px;
+}
+#content .wrap #contact_info .information > section h3 {
+  font-size: 1.25rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#content .wrap #contact_info .information > section p {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#content .wrap #accreditations > ul {
+  padding: 0px 24px;
+}
+#content .wrap #accreditations > ul li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+#content .wrap #accreditations > ul li .img {
+  background-image: url("http://traveltours.test/wp-content/themes/wp_traveltours/assets/images/accreditation_img_placeholder.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+}
+#content .wrap #accreditations > ul li .details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 85%;
+}
+#content .wrap #accreditations > ul li .details .name {
+  font-size: 1.25rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#content .wrap #accreditations > ul li .details .creds_description {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#content .coconut_bg_left {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: -2;
+}
+#content .coconut_bg_right {
+  position: absolute;
+  bottom: 165px;
+  right: 0px;
+  z-index: -2;
+}
+#content .land_bg {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: -1;
+  width: 100%;
+}
+
+#lightbox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -100;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: opacity 300ms ease;
+}
+#lightbox .images {
+  max-width: 1420px;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #EEF9F8;
+  border-radius: 16px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+#lightbox .images #lightbox_images_carousel {
+  height: 100%;
+}
+#lightbox .images #lightbox_images_carousel .slick-list, #lightbox .images #lightbox_images_carousel .slick-track {
+  height: 100%;
+}
+#lightbox .images #lightbox_images_carousel .slick-arrow {
+  display: none !important;
+}
+#lightbox .images #lightbox_images_carousel .img {
+  background-image: url("https://placehold.co/600x400");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+#lightbox .images .close_lightbox {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 1000px;
+  opacity: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#lightbox .images .previous {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px 24px;
+  opacity: 0;
+  cursor: pointer;
+}
+#lightbox .images .next {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px 24px;
+  opacity: 0;
+  cursor: pointer;
+}
+#lightbox .images:hover .close_lightbox,
+#lightbox .images:hover .previous,
+#lightbox .images:hover .next {
+  opacity: 1;
+}
+
+#lightbox.show {
+  opacity: 1;
+  z-index: 100;
+}
+
+@media (max-width: 980px) {
+  #content .wrap #contact_info .information {
+    row-gap: 24px;
+    justify-content: flex-start;
+  }
+  #content .wrap #contact_info .information > section {
+    width: 50%;
+  }
+  #content .wrap #accreditations > ul li .details {
+    width: 83%;
+  }
+}
+@media (max-width: 780px) {
+  #content .wrap .images #images_carousel .img {
+    height: 60vw;
+  }
+  #content .wrap #accreditations > ul {
+    padding: 0px;
+  }
+  #content .wrap #accreditations > ul li .details {
+    width: 73%;
+  }
+  #content .coconut_bg_left,
+  #content .coconut_bg_right {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  #content .wrap #contact_info .information {
+    row-gap: 16px;
+  }
+  #content .wrap #contact_info .information > section {
+    width: 100%;
+  }
+  #content .wrap #accreditations > ul {
+    padding: 0px;
+  }
+  #content .wrap #accreditations > ul li .details {
+    width: 100%;
+  }
+  #content .land_bg {
+    display: none;
+  }
+}/*# sourceMappingURL=about_us.css.map */

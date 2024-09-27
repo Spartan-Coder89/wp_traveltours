@@ -5,7 +5,7 @@
 ?>
 
 <main>
-    <section id="above_the_fold">
+    <section id="above_the_fold" style="<?php echo get_home_hero_theme_mod_img(); ?>">
         <div class="wrap">
             <div class="social_icons">
                 <a href="">

@@ -27,7 +27,7 @@ if ( is_page('home') ) {
 } else if ( is_page('contact-us') ) {
     get_template_part( 'template_parts/contact_us' );
 
-} else if ( is_page('explore-destinations') ) {
+} else if ( is_page('explore-destinations') or is_post_type_archive('explore-destinations') ) {
     get_template_part( 'template_parts/explore_destinations' );
 
 } else if ( is_singular('destinations') ) {

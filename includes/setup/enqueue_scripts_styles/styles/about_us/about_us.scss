@@ -1,0 +1,376 @@
+
+@import '../../../../../assets/css/variables_and_mixins';
+
+#content {
+    @include flex_center();
+    padding: 48px 24px;
+    position: relative;
+    overflow: hidden;
+
+    .wrap {
+        max-width: 1180px;
+        width: 100%;
+        @include flex_vertical();
+        gap: 48px;
+
+        > section {
+            @include flex_vertical();
+            gap: 16px;
+
+            h2 {
+                @include heading_3();
+                color: $brand_1_900;
+            }
+
+            p {
+                @include text_base_400();
+                color: $neutral_500;
+            }
+        }
+
+        .images {
+            width: 100%;
+            border: 10px solid $brand_1_50;
+            border-radius: 16px;
+            box-shadow: 0px 1px 4px rgb(0 0 0 / 20%);
+            position: relative;
+        
+            #images_carousel {
+        
+                .slick-arrow {
+                    display: none;
+                }
+        
+                .img {
+                    background-image: url('https://placehold.co/600x400');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 585px;
+                }
+            }
+        
+            .fullscreen {
+                position: absolute;
+                bottom: 16px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 12px;
+                background-color: rgb(0, 0, 0, 0.3);
+                border-radius: 1000px;
+                opacity: 0;
+                cursor: pointer;
+                @include flex_center();
+            }
+        
+            .previous {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                z-index: 1;
+                height: 100%;
+                background-color: rgb(0, 0, 0, 0.3);
+                @include flex_center();
+                padding: 0px 24px;
+                opacity: 0;
+                cursor: pointer;
+            }
+        
+            .next {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                z-index: 1;
+                height: 100%;
+                background-color: rgb(0, 0, 0, 0.3);
+                @include flex_center();
+                padding: 0px 24px;
+                opacity: 0;
+                cursor: pointer;
+            }
+        
+            &:hover {
+                .fullscreen,
+                .previous,
+                .next {
+                    opacity: 1;
+                }
+            }
+        }
+
+        #contact_info {
+            .information {
+                @include flex_center();
+                align-items: flex-start;
+
+                > section {
+                    @include flex_vertical();
+                    gap: 6px;
+                    width: 33.33%;
+                    padding-right: 24px;
+
+                    h3 {
+                        @include heading_5();
+                        color: $neutral_500;
+                    }
+
+                    p {
+                        @include text_base_400();
+                        color: $neutral_500;
+                    }
+                }
+            }
+        }
+
+        #accreditations {
+            > ul {
+                padding: 0px 24px;
+
+                li {
+                    @include flex();
+                    align-items: flex-start;
+                    gap: 16px;
+                    margin-bottom: 16px;
+
+                    .img {
+                        background-image: url($images_uri + '/accreditation_img_placeholder.jpg');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 12px;
+                    }
+
+                    .details {
+                        @include flex_vertical();
+                        gap: 12px;
+                        width: 85%;
+
+                        .name {
+                            @include heading_5();
+                            color: $neutral_500;
+                        }
+
+                        .creds_description {
+                            @include text_base_400();
+                            color: $neutral_500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .coconut_bg_left {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        z-index: -2;
+    }
+
+    .coconut_bg_right {
+        position: absolute;
+        bottom: 165px;
+        right: 0px;
+        z-index: -2;
+    }
+
+    .land_bg {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        z-index: -1;
+        width: 100%;
+    }
+}
+
+#lightbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -100;
+    opacity: 0;
+    background-color: rgb(0, 0, 0, 0.2);
+    padding: 24px;
+    @include flex_center();
+    transition: opacity 300ms ease;
+
+    .images {
+        max-width: 1420px;
+        width: 100%;
+        height: 100%;
+        
+        border: 10px solid $brand_1_50;
+        border-radius: 16px;
+        box-shadow: 0px 1px 4px rgb(0 0 0 / 20%);
+        position: relative;
+
+        #lightbox_images_carousel {
+            height: 100%;
+            
+            .slick-list, .slick-track {
+                height: 100%;
+            }
+
+            .slick-arrow {
+                display: none !important;
+            }
+
+            .img {
+                background-image: url('https://placehold.co/600x400');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100%;
+            }
+        }
+
+        .close_lightbox {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px;
+            background-color: rgb(0, 0, 0, 0.3);
+            border-radius: 1000px;
+            opacity: 0;
+            cursor: pointer;
+            @include flex_center();
+        }
+
+        .previous {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            height: 100%;
+            background-color: rgb(0, 0, 0, 0.3);
+            @include flex_center();
+            padding: 0px 24px;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .next {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            z-index: 1;
+            height: 100%;
+            background-color: rgb(0, 0, 0, 0.3);
+            @include flex_center();
+            padding: 0px 24px;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        &:hover {
+            .close_lightbox,
+            .previous,
+            .next {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+#lightbox.show {
+    opacity: 1;
+    z-index: 100;
+}
+
+@media(max-width:980px) {
+
+    #content {
+        .wrap {
+            #contact_info {
+                .information {
+                    row-gap: 24px;
+                    justify-content: flex-start;
+
+                    > section {
+                        width: 50%;
+                    }
+                }
+            }
+
+            #accreditations {
+                > ul {
+                    li {
+                        .details {
+                            width: 83%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:780px) {
+
+    #content {
+        .wrap {
+            .images {
+                #images_carousel {
+                    .img {
+                        height: 60vw;
+                    }
+                }
+            }
+
+            #accreditations {
+                > ul {
+                    padding: 0px;
+
+                    li {
+                        .details {
+                            width: 73%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .coconut_bg_left,
+        .coconut_bg_right {
+            display: none;
+        }
+    }
+}
+
+@media(max-width:480px) {
+
+    #content {
+        .wrap {
+            #contact_info {
+                .information {
+                    row-gap: 16px;
+
+                    > section {
+                        width: 100%;
+                    }
+                }
+            }
+
+            #accreditations {
+                > ul {
+                    padding: 0px;
+
+                    li {
+                        .details {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .land_bg {
+            display: none;
+        }
+    }
+}
