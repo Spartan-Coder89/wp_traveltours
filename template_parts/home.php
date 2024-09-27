@@ -33,8 +33,8 @@
                 </a>
             </div>
             <div class="headline">
-                <h2>A beautiful destination to discover and explore.</h2>
-                <p>Your journey to relaxation and discovery</p>
+                <h2><?php echo get_theme_mod('traveltours_hero_headline_setting', 'A beautiful destination to discover and explore.'); ?></h2>
+                <p><?php echo get_theme_mod('traveltours_hero_subheadline_setting', 'Your journey to relaxation and discovery'); ?></p>
             </div>
             <div class="cta">
                 <a href="" class="button">
