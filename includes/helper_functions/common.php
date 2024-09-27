@@ -101,17 +101,3 @@ function get_home_hero_theme_mod_img() {
 
   return $return_value;
 }
-
-/**
- * Get theme mod text values
- */
-function get_theme_mod_text($setting, $default = '') {
-  
-  $return_value = $default;
-
-  if (!empty(get_theme_mod($setting))) {
-    $return_value = get_theme_mod($setting);
-  }
-
-  return $return_value;
-}
