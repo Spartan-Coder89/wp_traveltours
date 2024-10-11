@@ -68,3 +68,30 @@ function explore_destinations_list() {
 
   return $return_value;
 }
+
+
+function testimonials_list() {
+
+  $return_value = '';
+
+  $posts = get_posts([
+    'posts_per_page' => -1,
+    'post_type' => 'testimonials'
+  ]);
+
+  foreach ($posts as $key => $post) {
+
+    $testimonial_position = get_post_meta($post->ID, '_testimonial_position', true);
+
+    $return_value .= '<div class="item">
+        <div class="img" style="background-image: url('. get_the_post_thumbnail_url($post->ID, 'large') .');"></div>
+        <div class="content">
+            <p class="testimonial_content">'. get_the_content(null, false, $post->ID) .'</p>
+            <p class="name">'. get_the_title($post->ID) .'</p>
+            <p class="position">'. $testimonial_position .'</p>
+        </div>
+    </div>';
+  }
+
+  return $return_value;
+}

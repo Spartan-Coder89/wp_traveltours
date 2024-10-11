@@ -194,8 +194,8 @@
     <div id="explore_destination">
         <section class="wrap">
             <div class="section_title">
-                <p>Explore destination</p>
-                <h2>Explore Popular Destination Spots</h2>
+                <p><?php echo get_theme_mod_text('traveltours_explore_section_subtitle_setting', 'Explore destination'); ?></p>
+                <h2><?php echo get_theme_mod_text('traveltours_explore_section_title_setting', 'Explore Popular Destination Spots'); ?></h2>
             </div>
             <div class="carousel_wrap">
                 <div class="carousel">
@@ -227,61 +227,12 @@
     <div id="testimonial">
         <section class="wrap">
             <div class="section_title">
-                <p>True testimonials</p>
-                <h2>Our Satisfied Clients</h2>
+                <p><?php echo get_theme_mod_text('traveltours_testimonial_section_subtitle_setting', 'True testimonials'); ?></p>
+                <h2><?php echo get_theme_mod_text('traveltours_testimonial_section_title_setting', 'Our Satisfied Clients'); ?></h2>
             </div>
             <div class="testimonial_slick_wrap">
                 <div class="testimonial_slick">
-                    <div class="item">
-                        <div class="img"></div>
-                        <div class="content">
-                            <p class="testimonial_content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-                            </p>
-                            <p class="name">John William Doe</p>
-                            <p class="position">Chief Executive Officer</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img"></div>
-                        <div class="content">
-                            <p class="testimonial_content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-                            </p>
-                            <p class="name">John William Doe</p>
-                            <p class="position">Chief Executive Officer</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img"></div>
-                        <div class="content">
-                            <p class="testimonial_content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-                            </p>
-                            <p class="name">John William Doe</p>
-                            <p class="position">Chief Executive Officer</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img"></div>
-                        <div class="content">
-                            <p class="testimonial_content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-                            </p>
-                            <p class="name">John William Doe</p>
-                            <p class="position">Chief Executive Officer</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="img"></div>
-                        <div class="content">
-                            <p class="testimonial_content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales ante in sodales. Duis gravida dolor nulla, non eleifend orci gravida vel. Ut ut velit sed lacus suscipit ultricies. Nulla bibendum luctus viverra. Sed eleifend fermentum orci. Aenean nec leo at lectus sodales sodales nec in massa.
-                            </p>
-                            <p class="name">John William Doe</p>
-                            <p class="position">Chief Executive Officer</p>
-                        </div>
-                    </div>
+                    <?php echo testimonials_list(); ?>
                 </div>
 
                 <svg class="testimonial_bg" width="207" height="208" viewBox="0 0 207 208" fill="none" xmlns="http://www.w3.org/2000/svg">
