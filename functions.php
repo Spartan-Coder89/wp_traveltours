@@ -10,7 +10,9 @@ define('THIRD_PARTY_DIR', get_template_directory() .'/assets/thirdparty');
 define('THIRD_PARTY_DIR_URI', get_template_directory_uri() .'/assets/thirdparty');
 define('THEME_INCLUDES_DIR', get_template_directory() .'/includes');
 define('ENQUEUE_STYLES_DIR_URI', get_template_directory_uri() .'/includes/setup/enqueue_scripts_styles/styles');
+define('ADMIN_ENQUEUE_STYLES_DIR_URI', get_template_directory_uri() .'/includes/setup/enqueue_admin_scripts_styles/styles');
 define('ENQUEUE_SCRIPTS_DIR_URI', get_template_directory_uri() .'/includes/setup/enqueue_scripts_styles/scripts');
+define('ADMIN_ENQUEUE_SCRIPTS_DIR_URI', get_template_directory_uri() .'/includes/setup/enqueue_admin_scripts_styles/scripts');
 define('ENQUEUE_CUSTOMIZER_SCRIPTS_DIR_URI', get_template_directory_uri() .'/includes/setup/enqueue_customizer_scripts');
 
 include_once THEME_DIR .'/includes/setup/setup.php';

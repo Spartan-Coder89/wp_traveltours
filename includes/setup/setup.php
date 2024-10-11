@@ -106,6 +106,71 @@ add_action('wp_enqueue_scripts', function() {
 
 
 /**
+ * Enqueue admin scripts and styles
+ * ==========================================================================================================================================
+ */
+add_action('admin_enqueue_scripts', function() {
+  
+  global $current_screen;
+
+  if (is_admin() and is_dir(THEME_INCLUDES_DIR .'/setup/enqueue_admin_scripts_styles/styles')) {
+
+    $styles_directory_content = wpre_get_dir_contents(THEME_INCLUDES_DIR .'/setup/enqueue_admin_scripts_styles/styles');
+
+    $first_key = array_search('thirdparty', $styles_directory_content);
+    $second_key = array_search('default', $styles_directory_content);
+
+    if ($first_key !== false) {
+      unset($styles_directory_content[$first_key]);
+    }
+    
+    if ($second_key !== false) {
+      unset($styles_directory_content[$second_key]);
+    }
+
+    $styles_directory_content_rearranged = array_values($styles_directory_content);
+
+    array_unshift($styles_directory_content_rearranged, 'default');
+    array_unshift($styles_directory_content_rearranged, 'thirdparty');
+
+    if (!empty($styles_directory_content_rearranged)) {
+      foreach ($styles_directory_content_rearranged as $key => $directory) {
+        include_once THEME_INCLUDES_DIR .'/setup/enqueue_admin_scripts_styles/styles/'. $directory .'/enqueue_style.php';
+      }
+    }
+  }
+
+  if (is_admin() and is_dir(THEME_INCLUDES_DIR .'/setup/enqueue_admin_scripts_styles/scripts')) {
+
+    $scripts_directory_content = wpre_get_dir_contents(THEME_INCLUDES_DIR .'/setup/enqueue_admin_scripts_styles/scripts');
+
+    $first_key = array_search('thirdparty', $scripts_directory_content);
+    $second_key = array_search('default', $scripts_directory_content);
+
+    if ($first_key !== false) {
+      unset($scripts_directory_content[$first_key]);
+    }
+    
+    if ($second_key !== false) {
+      unset($scripts_directory_content[$second_key]);
+    }
+
+    $scripts_directory_content_rearranged = array_values($scripts_directory_content);
+
+    array_unshift($scripts_directory_content_rearranged, 'default');
+    array_unshift($scripts_directory_content_rearranged, 'thirdparty'); 
+
+    if (!empty($scripts_directory_content_rearranged)) {
+      foreach ($scripts_directory_content_rearranged as $key => $directory) {
+        include_once THEME_INCLUDES_DIR .'/setup/enqueue_admin_scripts_styles/scripts/'. $directory .'/enqueue_script.php';
+      }
+    }
+
+  }
+});
+
+
+/**
  * Enqueue scripts and styles on customizer screen
  * ==========================================================================================================================================
  */

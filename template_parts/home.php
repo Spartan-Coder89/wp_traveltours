@@ -33,15 +33,15 @@
                 </a>
             </div>
             <div class="headline">
-                <h2><?php echo get_theme_mod('traveltours_hero_headline_setting', 'A beautiful destination to discover and explore.'); ?></h2>
-                <p><?php echo get_theme_mod('traveltours_hero_subheadline_setting', 'Your journey to relaxation and discovery'); ?></p>
+                <h2><?php echo get_theme_mod_text('traveltours_hero_headline_setting', 'A beautiful destination to discover and explore.'); ?></h2>
+                <p><?php echo get_theme_mod_text('traveltours_hero_subheadline_setting', 'Your journey to relaxation and discovery'); ?></p>
             </div>
             <div class="cta">
                 <a href="" class="button">
                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.5 22.5C6.53333 22.5 5.70833 22.1583 5.025 21.475C4.34167 20.7917 4 19.9667 4 19V6C4 5.03333 4.34167 4.20833 5.025 3.525C5.70833 2.84167 6.53333 2.5 7.5 2.5H20V17.5C19.5833 17.5 19.2293 17.646 18.938 17.938C18.6467 18.23 18.5007 18.584 18.5 19C18.4993 19.416 18.6453 19.7703 18.938 20.063C19.2307 20.3557 19.5847 20.5013 20 20.5V22.5H7.5ZM8 15.5H10V4.5H8V15.5ZM7.5 20.5H16.825C16.725 20.2667 16.646 20.0293 16.588 19.788C16.53 19.5467 16.5007 19.284 16.5 19C16.5 18.7333 16.525 18.475 16.575 18.225C16.625 17.975 16.7083 17.7333 16.825 17.5H7.5C7.06667 17.5 6.70833 17.646 6.425 17.938C6.14167 18.23 6 18.584 6 19C6 19.4333 6.14167 19.7917 6.425 20.075C6.70833 20.3583 7.06667 20.5 7.5 20.5Z" fill="#FFF6EC"/>
                     </svg>
-                    <span>Book your trip now</span>
+                    <span><?php echo get_theme_mod_text('traveltours_hero_cta_setting', 'Book your trip now'); ?></span>
                 </a>
             </div>
         </div>
@@ -78,24 +78,31 @@
             <div class="top">
                 <section class="content">
                     <div class="section_title">
-                        <p>We are the best</p>
-                        <h2>About Us</h2>
+                        <p><?php echo get_theme_mod_text('traveltours_about_section_subtitle_setting', 'We are the best'); ?></p>
+                        <h2><?php echo get_theme_mod_text('traveltours_about_section_title_setting', 'About Us'); ?></h2>
                     </div>
                     <p>
-                        In tortor quam, elementum et risus eget, consectetur pellentesque nibh. Nam nec sapien id ante tincidunt pretium. Donec cursus, ipsum id facilisis dignissim, lorem orci luctus mauris, sollicitudin dapibus dolor ex euismod lectus. <br><br>
-                        Donec cursus, ipsum id facilisis dignissim, lorem orci luctus mauris, sollicitudin dapibus dolor ex euismod.
+                        <?php 
+                            echo get_theme_mod_text(
+                                'traveltours_about_section_description_setting', 
+                                'In tortor quam, elementum et risus eget, consectetur pellentesque nibh. Nam nec sapien id ante tincidunt pretium. Donec cursus, ipsum id facilisis dignissim, lorem orci luctus mauris, sollicitudin dapibus dolor ex euismod lectus. <br><br> Donec cursus, ipsum id facilisis dignissim, lorem orci luctus mauris, sollicitudin dapibus dolor ex euismod.'
+                            ); 
+                        ?>
                     </p>
                     <div class="cta">
                         <a href="#" class="button">
                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 22.5C6.53333 22.5 5.70833 22.1583 5.025 21.475C4.34167 20.7917 4 19.9667 4 19V6C4 5.03333 4.34167 4.20833 5.025 3.525C5.70833 2.84167 6.53333 2.5 7.5 2.5H20V17.5C19.5833 17.5 19.2293 17.646 18.938 17.938C18.6467 18.23 18.5007 18.584 18.5 19C18.4993 19.416 18.6453 19.7703 18.938 20.063C19.2307 20.3557 19.5847 20.5013 20 20.5V22.5H7.5ZM8 15.5H10V4.5H8V15.5ZM7.5 20.5H16.825C16.725 20.2667 16.646 20.0293 16.588 19.788C16.53 19.5467 16.5007 19.284 16.5 19C16.5 18.7333 16.525 18.475 16.575 18.225C16.625 17.975 16.7083 17.7333 16.825 17.5H7.5C7.06667 17.5 6.70833 17.646 6.425 17.938C6.14167 18.23 6 18.584 6 19C6 19.4333 6.14167 19.7917 6.425 20.075C6.70833 20.3583 7.06667 20.5 7.5 20.5Z" fill="#FFF6EC"/>
                             </svg>
-                            <span>Book here</span>
+                            <span><?php echo get_theme_mod_text('traveltours_about_section_cta_setting', 'Book here'); ?></span>
                         </a>
                     </div>
                 </section>
                 <div class="img">
-                    <div class="pic"></div>
+                    <div class="pic" style="background-image: url(<?php 
+                        echo get_theme_mod_img_url('traveltours_about_section_img_setting', THEME_URI .'/assets/images/about_us_img.jpg'); 
+                    ?>)">
+                    </div>
                     <div class="bg_pic"></div>
                     <img class="pin" src="<?php echo THEME_URI; ?>/assets/images/pin.png" alt="">
                     <svg class="bg_passport" width="202" height="221" viewBox="0 0 202 221" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,39 +141,19 @@
     <div id="pointers">
         <div class="wrap">
             <section class="item">
-                <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.8 35.6487L19.275 29.1237C18.725 28.5737 18.038 28.3117 17.214 28.3377C16.388 28.3617 15.7 28.6487 15.15 29.1987C14.6 29.7487 14.325 30.4487 14.325 31.2987C14.325 32.1487 14.6 32.8487 15.15 33.3987L23.7 41.9487C24.25 42.4987 24.95 42.7737 25.8 42.7737C26.65 42.7737 27.35 42.4987 27.9 41.9487L44.925 24.9237C45.475 24.3737 45.738 23.6857 45.714 22.8597C45.688 22.0357 45.4 21.3487 44.85 20.7987C44.3 20.2487 43.6 19.9737 42.75 19.9737C41.9 19.9737 41.2 20.2487 40.65 20.7987L25.8 35.6487ZM30 60.2487C25.85 60.2487 21.95 59.4607 18.3 57.8847C14.65 56.3107 11.475 54.1737 8.775 51.4737C6.075 48.7737 3.938 45.5987 2.364 41.9487C0.788 38.2987 0 34.3987 0 30.2487C0 26.0987 0.788 22.1987 2.364 18.5487C3.938 14.8987 6.075 11.7237 8.775 9.02366C11.475 6.32366 14.65 4.18566 18.3 2.60966C21.95 1.03566 25.85 0.248657 30 0.248657C34.15 0.248657 38.05 1.03566 41.7 2.60966C45.35 4.18566 48.525 6.32366 51.225 9.02366C53.925 11.7237 56.062 14.8987 57.636 18.5487C59.212 22.1987 60 26.0987 60 30.2487C60 34.3987 59.212 38.2987 57.636 41.9487C56.062 45.5987 53.925 48.7737 51.225 51.4737C48.525 54.1737 45.35 56.3107 41.7 57.8847C38.05 59.4607 34.15 60.2487 30 60.2487ZM30 54.2487C36.65 54.2487 42.313 51.9117 46.989 47.2377C51.663 42.5617 54 36.8987 54 30.2487C54 23.5987 51.663 17.9357 46.989 13.2597C42.313 8.58566 36.65 6.24866 30 6.24866C23.35 6.24866 17.688 8.58566 13.014 13.2597C8.338 17.9357 6 23.5987 6 30.2487C6 36.8987 8.338 42.5617 13.014 47.2377C17.688 51.9117 23.35 54.2487 30 54.2487Z" fill="#2EC4B6"/>
-                </svg>
-                <h2>Safe Traveling</h2>
-                <p>Mauris vel eleifend dolor. Suspendisse a pellentesque.</p>
+                <img src="<?php echo get_theme_mod_img_url('traveltours_pointers_section_img_1_setting', THEME_URI .'/assets/images/pointer1.png'); ?>" alt="">
+                <h2><?php echo get_theme_mod_text('traveltours_pointers_section_title_1_setting', 'Safe Traveling'); ?></h2>
+                <p><?php echo get_theme_mod_text('traveltours_pointers_section_description_1_setting', 'Mauris vel eleifend dolor. Suspendisse a pellentesque.'); ?></p>
             </section>
             <section class="item">
-                <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_82_136)">
-                        <path d="M30 0.248657C22.0435 0.248657 14.4129 3.40936 8.7868 9.03545C3.16071 14.6615 0 22.2922 0 30.2486C0.000205107 34.1883 0.776381 38.0893 2.28421 41.729C3.79204 45.3687 6.002 48.6758 8.7879 51.4614C11.5738 54.247 14.8811 56.4566 18.5209 57.9641C22.1608 59.4715 26.0619 60.2473 30.0016 60.2471C33.9412 60.2469 37.8423 59.4707 41.4819 57.9629C45.1216 56.455 48.4287 54.2451 51.2143 51.4592C53.9999 48.6733 56.2095 45.366 57.717 41.7261C59.2244 38.0863 60.0002 34.1852 60 30.2455C60 13.6799 46.5656 0.248657 30 0.248657ZM30 53.9955C26.8584 54.0316 23.7408 53.4439 20.8279 52.2666C17.915 51.0893 15.2647 49.3457 13.0304 47.1369C10.7961 44.9281 9.02223 42.2979 7.81159 39.3987C6.60095 36.4995 5.97757 33.3889 5.97757 30.2471C5.97757 27.1053 6.60095 23.9947 7.81159 21.0955C9.02223 18.1963 10.7961 15.5661 13.0304 13.3573C15.2647 11.1484 17.915 9.40488 20.8279 8.22757C23.7408 7.05027 26.8584 6.46262 30 6.49866C33.1416 6.46262 36.2592 7.05027 39.1721 8.22757C42.085 9.40488 44.7353 11.1484 46.9696 13.3573C49.2039 15.5661 50.9778 18.1963 52.1884 21.0955C53.3991 23.9947 54.0224 27.1053 54.0224 30.2471C54.0224 33.3889 53.3991 36.4995 52.1884 39.3987C50.9778 42.2979 49.2039 44.9281 46.9696 47.1369C44.7353 49.3457 42.085 51.0893 39.1721 52.2666C36.2592 53.4439 33.1416 54.0316 30 53.9955ZM22.1906 29.4674C24.7781 29.4674 26.875 27.0205 26.875 23.9986C26.875 20.9768 24.775 18.5299 22.1875 18.5299C19.6 18.5299 17.5 20.9768 17.5 23.9986C17.5 27.0205 19.6 29.4674 22.1906 29.4674ZM37.8125 29.4674C40.4031 29.4674 42.5 27.0205 42.5 23.9986C42.5 20.9768 40.4 18.5299 37.8125 18.5299C35.225 18.5299 33.125 20.9799 33.125 23.9986C33.125 27.0174 35.225 29.4674 37.8125 29.4674ZM43.5656 34.4236C43.0141 34.1454 42.3755 34.0942 41.7867 34.2812C41.1979 34.4681 40.7057 34.8782 40.4156 35.4236C40.3094 35.6299 37.7 40.4018 30.0031 40.4018C22.3438 40.4018 19.7188 35.6736 19.5875 35.4268C19.3065 34.8719 18.8167 34.4513 18.2256 34.2577C17.6346 34.064 16.9908 34.113 16.4359 34.394C15.8811 34.6749 15.4605 35.1648 15.2668 35.7558C15.0731 36.3469 15.1222 36.9906 15.4031 37.5455C15.5594 37.8549 19.3031 45.0893 30.0031 45.0893C40.7063 45.0893 44.4438 37.8518 44.5969 37.5424C44.8722 36.9918 44.9183 36.3546 44.725 35.7701C44.5318 35.1857 44.1149 34.7015 43.5656 34.4236Z" fill="#2EC4B6"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_82_136">
-                            <rect width="60" height="60" fill="white" transform="translate(0 0.248657)"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-                <h2>Friendly Guides</h2>
-                <p>Mauris vel eleifend dolor. Suspendisse a pellentesque.</p>
+                <img src="<?php echo get_theme_mod_img_url('traveltours_pointers_section_img_2_setting', THEME_URI .'/assets/images/pointer2.png'); ?>" alt="">
+                <h2><?php echo get_theme_mod_text('traveltours_pointers_section_title_2_setting', 'Friendly Guides'); ?></h2>
+                <p><?php echo get_theme_mod_text('traveltours_pointers_section_description_2_setting', 'Mauris vel eleifend dolor. Suspendisse a pellentesque.'); ?></p>
             </section>
             <section class="item">
-                <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_82_141)">
-                        <path d="M30 60.2487C13.431 60.2487 0 46.8177 0 30.2487C0 13.6797 13.431 0.248657 30 0.248657C46.569 0.248657 60 13.6797 60 30.2487C60 46.8177 46.569 60.2487 30 60.2487ZM30 54.2487C36.3652 54.2487 42.4697 51.7201 46.9706 47.2192C51.4714 42.7183 54 36.6139 54 30.2487C54 23.8835 51.4714 17.779 46.9706 13.2781C42.4697 8.77722 36.3652 6.24866 30 6.24866C23.6348 6.24866 17.5303 8.77722 13.0294 13.2781C8.52856 17.779 6 23.8835 6 30.2487C6 36.6139 8.52856 42.7183 13.0294 47.2192C17.5303 51.7201 23.6348 54.2487 30 54.2487ZM21 33.2487H18V27.2487H21V24.2487C20.9986 21.8105 21.8458 19.4478 23.3962 17.566C24.9466 15.6842 27.1035 14.4006 29.4969 13.9355C31.8904 13.4704 34.371 13.8527 36.5134 15.0168C38.6557 16.181 40.3261 18.0544 41.238 20.3157L35.28 21.8037C34.754 20.9853 33.9769 20.3596 33.0652 20.0204C32.1535 19.6811 31.1564 19.6467 30.2234 19.9222C29.2905 20.1977 28.472 20.7682 27.8908 21.5483C27.3096 22.3284 26.9971 23.2759 27 24.2487V27.2487H36V33.2487H27V39.2487H42V45.2487H18V39.2487H21V33.2487Z" fill="#2EC4B6"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_82_141">
-                            <rect width="60" height="60" fill="white" transform="translate(0 0.248657)"/>
-                        </clipPath>
-                    </defs>
-                </svg>                    
-                <h2>Happy Clients</h2>
-                <p>Mauris vel eleifend dolor. Suspendisse a pellentesque.</p>
+                <img src="<?php echo get_theme_mod_img_url('traveltours_pointers_section_img_3_setting', THEME_URI .'/assets/images/pointer3.png'); ?>" alt="">
+                <h2><?php echo get_theme_mod_text('traveltours_pointers_section_title_3_setting', 'Happy Clients'); ?></h2>
+                <p><?php echo get_theme_mod_text('traveltours_pointers_section_description_3_setting', 'Mauris vel eleifend dolor. Suspendisse a pellentesque.'); ?></p>
             </section>
         </div>
     </div>
