@@ -199,10 +199,19 @@ document.addEventListener('alpine:init', () => {
         key_highlights_input : document.getElementById('key_highlights_input').value ? JSON.parse(document.getElementById('key_highlights_input').value) : [],
 
         add_highlight() {
+            let highlight_title = document.getElementById('highlight_title').value
+            let highlight_excerpt = document.getElementById('highlight_excerpt').value
             let highlight_textarea = document.getElementById('highlight_textarea').value
             
-            this.key_highlights_input.push(highlight_textarea)
+            this.key_highlights_input.push({
+                "title" : highlight_title,
+                "highlight_excerpt" : highlight_excerpt,
+                "highlight_content" : highlight_textarea
+            })
+
             document.getElementById('key_highlights_input').value = JSON.stringify(this.key_highlights_input)
+            document.getElementById('highlight_title').value = ''
+            document.getElementById('highlight_excerpt').value = ''
             document.getElementById('highlight_textarea').value = ''
         },
 

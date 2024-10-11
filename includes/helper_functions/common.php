@@ -227,17 +227,12 @@ function get_single_destination_key_highlights($id, $is_admin = false) {
  */
 function get_top_featured_destination() {
 
-  $return_value = '';
-}
+  $posts = get_posts([
+    'posts_per_page' => -1,
+    'post_type' => 'destinations',
+    'meta_key' => '_top_featured',
+    'meta_value' => 1
+  ]);
 
-/**
- * Get is featured destination value
- */
-function get_is_featured_destination($post_id) {
-
-  $return_value = 0;
-
-  $is_top_featured = get_post_meta($post_id, 'is_top_featured', true);
-
-  return $return_value;
+  return $posts;
 }

@@ -59,6 +59,11 @@
 #key_highlights_container .input_wrap {
   margin-bottom: 16px;
 }
+#key_highlights_container .input_wrap #highlight_title,
+#key_highlights_container .input_wrap #highlight_excerpt {
+  width: 100%;
+  margin-bottom: 8px;
+}
 #key_highlights_container .input_wrap #highlight_textarea {
   width: 100%;
   margin-bottom: 8px;
@@ -69,6 +74,18 @@
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 12px;
+}
+#key_highlights_container #key_highlights_list li > span .title,
+#key_highlights_container #key_highlights_list li > span .highlight_excerpt,
+#key_highlights_container #key_highlights_list li > span .highlight_content {
+  display: block;
+  width: 100%;
+}
+#key_highlights_container #key_highlights_list li > span .title {
+  font-weight: 700;
+}
+#key_highlights_container #key_highlights_list li > span .highlight_excerpt {
+  font-style: italic;
 }
 #key_highlights_container #key_highlights_list li .remove_highlight {
   cursor: pointer;

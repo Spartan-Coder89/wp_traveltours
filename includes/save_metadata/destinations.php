@@ -6,6 +6,15 @@ add_action('save_post_destinations', function($post_id) {
     return;
   }
 
+  if (isset($_POST['basic_info'])) {
+
+    $basic_info = $_POST['basic_info'];
+
+    foreach ($basic_info as $key => $info) {
+      $basic_info[$key] = htmlspecialchars($info);
+    }
+  }
+
   $featured = isset($_POST['featured']) ? htmlspecialchars(strip_tags($_POST['featured'])) : 0;
   $top_featured = isset($_POST['top_featured']) ? htmlspecialchars(strip_tags($_POST['top_featured'])) : 0;
   $video_promotion = htmlspecialchars(strip_tags($_POST['video_promotion']));
@@ -30,6 +39,7 @@ add_action('save_post_destinations', function($post_id) {
   }
 
   //  Update post metadata
+  update_post_meta($post_id, '_basic_info', $basic_info);
   update_post_meta($post_id, '_top_featured', $featured);
   update_post_meta($post_id, '_featured', $top_featured);
   update_post_meta($post_id, '_video_promotion', $video_promotion);

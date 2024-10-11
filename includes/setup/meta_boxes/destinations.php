@@ -3,34 +3,38 @@
 add_meta_box(
   'basic_info',
   'Basic Information',
-  function($post) { ?>
+  function($post) { 
+    
+    $basic_info = get_post_meta($post->ID, '_basic_info', true);
+    ?>
     
     <div id="basic_info_container">
       <div class="form_control">
         <label for="starts_at">Starts at:</label>
-        <input type="text" name="starts_at">
+        <input type="text" name="basic_info[starts_at]" value="<?php echo isset($basic_info['starts_at']) ? $basic_info['starts_at'] : ''; ?>">
       </div>
       <div class="form_control">
         <label for="duration">Duration:</label>
-        <input type="text" name="duration">
+        <input type="text" name="basic_info[duration]" value="<?php echo isset($basic_info['duration']) ? $basic_info['duration'] : ''; ?>">
       </div>
       <div class="form_control">
         <label for="location">Location:</label>
-        <input type="text" name="location">
+        <input type="text" name="basic_info[location]" value="<?php echo isset($basic_info['location']) ? $basic_info['location'] : ''; ?>">
       </div>
       <div class="form_control">
         <label for="flight">Flight:</label>
-        <input type="text" name="flight">
+        <input type="text" name="basic_info[flight]" value="<?php echo isset($basic_info['flight']) ? $basic_info['flight'] : ''; ?>">
       </div>
       <div class="form_control">
         <label for="board_and_lodging">Board and Lodging:</label>
-        <input type="text" name="board_and_lodging">
+        <input type="text" name="basic_info[board_and_lodging]" value="<?php echo isset($basic_info['board_and_lodging']) ? $basic_info['board_and_lodging'] : ''; ?>">
       </div>
       <div class="form_control">
         <label for="visa">Visa:</label>
-        <input type="text" name="visa">
+        <input type="text" name="basic_info[visa]" value="<?php echo isset($basic_info['visa']) ? $basic_info['visa'] : ''; ?>">
       </div>
     </div>
+
 
     <?php
   },
@@ -86,6 +90,8 @@ add_meta_box(
     
     <div id="key_highlights_container" x-data="key_highlights">
       <div class="input_wrap">
+        <input type="text" id="highlight_title" placeholder="Highlight Title">
+        <input type="text" id="highlight_excerpt" placeholder="Highlight Short Excerpt">
         <textarea id="highlight_textarea"></textarea>
         <button type="button" id="add_highlight" @click="add_highlight">Add highlight</button>
       </div>
@@ -93,7 +99,11 @@ add_meta_box(
         <template x-for="(highlight, index) in key_highlights_input">
           <li>
             <span class="dashicons dashicons-remove remove_highlight" @click="remove_highlight(index)"></span>
-            <span x-text="highlight"></span>
+            <span>
+              <span class="title" x-text="highlight.title"></span>
+              <span class="highlight_excerpt" x-text="highlight.highlight_excerpt"></span>
+              <span class="highlight_content" x-text="highlight.highlight_content"></span>
+            </span>
           </li>
         </template>
       </ul>

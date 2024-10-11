@@ -70,6 +70,12 @@
     .input_wrap {
         margin-bottom: 16px;
 
+        #highlight_title,
+        #highlight_excerpt {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
         #highlight_textarea {
             width: 100%;
             margin-bottom: 8px;
@@ -84,6 +90,24 @@
             align-items: flex-start;
             gap: 12px;
             margin-bottom: 12px;
+
+            > span {
+                
+                .title,
+                .highlight_excerpt,
+                .highlight_content {
+                    display: block;
+                    width: 100%;
+                }
+
+                .title {
+                    font-weight: 700;
+                }
+
+                .highlight_excerpt {
+                    font-style: italic;
+                }
+            }
 
             .remove_highlight {
                 cursor: pointer;
