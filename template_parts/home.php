@@ -280,9 +280,9 @@
                 <form>
                     <img class="pin" src="<?php echo THEME_URI; ?>/assets/images/pin.png" alt="">
                     <div class="section_title">
-                        <p>Got some questions?</p>
-                        <h2>Contact Us Now</h2>
-                        <p class="note">Our 24/7 customer service are always ready to answer </p>
+                        <p><?php echo get_theme_mod_text('traveltours_contact_section_subtitle_setting', 'Got some questions?'); ?></p>
+                        <h2><?php echo get_theme_mod_text('traveltours_contact_section_title_setting', 'Contact Us Now'); ?></h2>
+                        <p class="note"><?php echo get_theme_mod_text('traveltours_contact_section_note_setting', 'Our 24/7 customer service are always ready to answer'); ?></p>
                     </div>
                     <div class="inputs">
                         <input type="text" placeholder="Fullname">
@@ -340,37 +340,11 @@
     <div id="latest_blog">
         <section class="wrap">
             <div class="section_title">
-                <p>See what’s latest</p>
-                <h2>Latest Blog</h2>
+                <p><?php echo get_theme_mod_text('traveltours_blog_section_subtitle_setting', 'See what’s latest'); ?></p>
+                <h2><?php echo get_theme_mod_text('traveltours_blog_section_title_setting', 'Latest Blog'); ?></h2>
             </div>
             <div class="blogs">
-                <div class="blog_item">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="post_date">07-13-25</p>
-                        <p class="blog_title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="">Read more</a>
-                    </div>
-                </div>
-                <div class="blog_item">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="post_date">07-13-25</p>
-                        <p class="blog_title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="">Read more</a>
-                    </div>
-                </div>
-                <div class="blog_item">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="post_date">07-13-25</p>
-                        <p class="blog_title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="">Read more</a>
-                    </div>
-                </div>
+                <?php echo latest_blog_list(); ?>
             </div>
         </section>
     </div>

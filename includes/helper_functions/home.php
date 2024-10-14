@@ -95,3 +95,32 @@ function testimonials_list() {
 
   return $return_value;
 }
+
+
+function latest_blog_list() {
+
+  $return_value = '';
+
+  $posts = get_posts([
+    'posts_per_page' => 3,
+    'post_type' => 'post'
+  ]);
+
+  foreach ($posts as $key => $post) {
+
+    $featured_img = get_the_post_thumbnail_url($post->ID);
+    $featured_img = !empty($featured_img) ? 'style="background-image: url('. $featured_img .')"' : '';
+
+    $return_value .= '<div class="blog_item">
+        <div class="img" '. $featured_img .'></div>
+        <div class="details">
+            <p class="post_date">'. get_the_date('m-d-Y', $post->ID) .'</p>
+            <p class="blog_title">'. get_the_title($post->ID) .'</p>
+            <p class="excerpt">'. get_the_excerpt($post->ID) .'</p>
+            <a class="read_more" href="'. get_the_permalink($post->ID) .'">Read more</a>
+        </div>
+    </div>';
+  }
+
+  return $return_value;
+}

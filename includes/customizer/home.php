@@ -202,7 +202,7 @@ $wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'traveltours
 
 
 /**
- * Pointers Section
+ * Explore Destinations Section
  * ==========================================================================================================================================
  */
 $wp_customize->add_section('traveltours_explore_section', array(
@@ -276,20 +276,20 @@ $wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'traveltours
 ]));
 
 //	Contact Section Sub-Title
-$wp_customize->add_setting('traveltours_testimonial_section_subtitle_setting');
-$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'traveltours_testimonial_section_subtitle_control', [
+$wp_customize->add_setting('traveltours_contact_section_subtitle_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'traveltours_contact_section_subtitle_control', [
 	'label' => 'Section Sub-Title',
 	'section' => 'traveltours_contact_section',
-	'settings' => 'traveltours_testimonial_section_subtitle_setting',
+	'settings' => 'traveltours_contact_section_title_setting',
 	'type' => 'text'
 ]));
 
 //	Contact Section Note
-$wp_customize->add_setting('traveltours_testimonial_section_note_setting');
-$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'traveltours_testimonial_section_note_control', [
+$wp_customize->add_setting('traveltours_contact_section_note_setting');
+$wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'traveltours_contact_section_note_control', [
 	'label' => 'Section Note',
 	'section' => 'traveltours_contact_section',
-	'settings' => 'traveltours_testimonial_section_note_setting',
+	'settings' => 'traveltours_contact_section_note_setting',
 	'type' => 'text'
 ]));
 

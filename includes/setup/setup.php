@@ -229,3 +229,13 @@ add_action('wp_head', function() {
   echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
   echo '<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Yeseva+One&display=swap" rel="stylesheet">';
 });
+
+
+/**
+ * Add google fonts
+ * ==========================================================================================================================================
+ */
+add_filter('use_block_editor_for_post_type', function($current_status, $post_type) {
+    if ($post_type === 'post') return false;
+    return $current_status;
+}, 10, 2);
