@@ -8,14 +8,9 @@
     <?php get_template_part( 'template_parts/inner_page_banner' ); ?>
     <div id="content">
         <div class="wrap">
-
             <div class="images">
                 <div id="images_carousel">
-                    <div class="img"></div>
-                    <div class="img"></div>
-                    <div class="img"></div>
-                    <div class="img"></div>
-                    <div class="img"></div>
+                    <?php echo list_about_page_gallery_images(); ?>
                 </div>
                 <div class="fullscreen">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,76 +32,47 @@
             <section id="description">
                 <h2>Company Description:</h2>
                 <p>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. <br><br>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. <br><br>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.
+                    <?php 
+                        $company_desription_default = 'Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. <br><br> Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. <br><br> Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.';
+
+                        echo get_theme_mod_text('traveltours_aboutus_description_setting', $company_desription_default);
+                    ?>
                 </p>
             </section>
 
             <section id="mission">
                 <h2>Mission:</h2>
                 <p>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.<br><br>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.
+                    <?php 
+                        $company_mission_default = 'Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. <br><br> Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.';
+
+                        echo get_theme_mod_text('traveltours_aboutus_mission_setting', $company_mission_default);
+                    ?>
                 </p>
             </section>
 
             <section id="vision">
                 <h2>Vision:</h2>
                 <p>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.<br><br>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.
+                <?php 
+                        $company_vision_default = 'Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. <br><br> Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.';
+
+                        echo get_theme_mod_text('traveltours_aboutus_vision_setting', $company_vision_default);
+                    ?>
                 </p>
             </section>
 
             <section id="contact_info">
                 <h2>Contact Information:</h2>
                 <div class="information">
-                    <section>
-                        <h3>Email:</h3>
-                        <p>travelandtours@gmail.com</p>
-                    </section>
-                    <section>
-                        <h3>Contact number:</h3>
-                        <p>(033) 123-23-4567 / 09123456789</p>
-                    </section>
-                    <section>
-                        <h3>Office address:</h3>
-                        <p>17700 Plank Rd, Baker City, Louisiana 70714 US</p>
-                    </section>
+                    <?php echo list_about_page_contact_info(); ?>
                 </div>
             </section>
 
             <section id="accreditations">
                 <h2>Accreditations:</h2>
                 <ul>
-                    <li>
-                        <div class="img"></div>
-                        <div class="details">
-                            <p class="name">Department of Tourism</p>
-                            <p class="creds_description">
-                                Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img"></div>
-                        <div class="details">
-                            <p class="name">Department of Tourism</p>
-                            <p class="creds_description">
-                                Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img"></div>
-                        <div class="details">
-                            <p class="name">Department of Tourism</p>
-                            <p class="creds_description">
-                                Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam.
-                            </p>
-                        </div>
-                    </li>                        
+                    <?php echo list_about_page_get_accreditations(); ?>                       
                 </ul>
             </section>
 
@@ -162,11 +128,7 @@
 <div id="lightbox">
     <div class="images">
         <div id="lightbox_images_carousel">
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
+            <?php echo list_about_page_gallery_images(); ?>
         </div>
         <div class="close_lightbox">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

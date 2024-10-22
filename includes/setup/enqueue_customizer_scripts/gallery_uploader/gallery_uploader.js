@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
 
 	let frame, traveltours_aboutus_gallery_setting = wp.customize( traveltours_aboutus_gallery_data.settingId )
-	let attachments = JSON.parse(traveltours_aboutus_gallery_setting.get());
+	let attachments = traveltours_aboutus_gallery_setting.get() ? JSON.parse(traveltours_aboutus_gallery_setting.get()) : []
 
 	/**
 	 * Add images to gallery

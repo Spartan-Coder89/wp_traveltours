@@ -88,7 +88,7 @@ add_action('wp_enqueue_scripts', function() {
     }
     
     if ($second_key !== false) {
-        unset($scripts_directory_content[$second_key]);
+      unset($scripts_directory_content[$second_key]);
     }
 
     $scripts_directory_content_rearranged = array_values($scripts_directory_content);
