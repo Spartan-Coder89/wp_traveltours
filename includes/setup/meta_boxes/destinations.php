@@ -5,36 +5,40 @@ add_meta_box(
   'Basic Information',
   function($post) { 
     
-    $basic_info = get_post_meta($post->ID, '_basic_info', true);
+    $destination_price = get_post_meta($post->ID, '_destination_price', true);
+    $destination_duration = get_post_meta($post->ID, '_destination_duration', true);
+    $destination_location = get_post_meta($post->ID, '_destination_location', true);
+    $destination_flight = get_post_meta($post->ID, '_destination_flight', true);
+    $destination_board_and_lodging = get_post_meta($post->ID, '_destination_board_and_lodging', true);
+    $destination_visa = get_post_meta($post->ID, '_destination_visa', true);
     ?>
     
     <div id="basic_info_container">
       <div class="form_control">
         <label for="starts_at">Starts at:</label>
-        <input type="text" name="basic_info[starts_at]" value="<?php echo isset($basic_info['starts_at']) ? $basic_info['starts_at'] : ''; ?>">
+        <input type="text" name="destination_price" value="<?php echo $destination_price; ?>">
       </div>
       <div class="form_control">
         <label for="duration">Duration:</label>
-        <input type="text" name="basic_info[duration]" value="<?php echo isset($basic_info['duration']) ? $basic_info['duration'] : ''; ?>">
+        <input type="text" name="destination_duration" value="<?php echo $destination_duration ; ?>">
       </div>
       <div class="form_control">
         <label for="location">Location:</label>
-        <input type="text" name="basic_info[location]" value="<?php echo isset($basic_info['location']) ? $basic_info['location'] : ''; ?>">
+        <input type="text" name="destination_location" value="<?php echo $destination_location; ?>">
       </div>
       <div class="form_control">
         <label for="flight">Flight:</label>
-        <input type="text" name="basic_info[flight]" value="<?php echo isset($basic_info['flight']) ? $basic_info['flight'] : ''; ?>">
+        <input type="text" name="destination_flight" value="<?php echo $destination_flight; ?>">
       </div>
       <div class="form_control">
         <label for="board_and_lodging">Board and Lodging:</label>
-        <input type="text" name="basic_info[board_and_lodging]" value="<?php echo isset($basic_info['board_and_lodging']) ? $basic_info['board_and_lodging'] : ''; ?>">
+        <input type="text" name="destination_board_and_lodging" value="<?php echo $destination_board_and_lodging; ?>">
       </div>
       <div class="form_control">
         <label for="visa">Visa:</label>
-        <input type="text" name="basic_info[visa]" value="<?php echo isset($basic_info['visa']) ? $basic_info['visa'] : ''; ?>">
+        <input type="text" name="destination_visa" value="<?php echo $destination_visa; ?>">
       </div>
     </div>
-
 
     <?php
   },

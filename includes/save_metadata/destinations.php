@@ -6,21 +6,18 @@ add_action('save_post_destinations', function($post_id) {
     return;
   }
 
-  if (isset($_POST['basic_info'])) {
-
-    $basic_info = $_POST['basic_info'];
-
-    foreach ($basic_info as $key => $info) {
-      $basic_info[$key] = htmlspecialchars($info);
-    }
-  }
-
+  $destination_price = isset($_POST['destination_price']) ? htmlspecialchars(strip_tags($_POST['destination_price'])) : '';
+  $destination_duration = isset($_POST['destination_duration']) ? htmlspecialchars(strip_tags($_POST['destination_duration'])) : '';
+  $destination_location = isset($_POST['destination_location']) ? htmlspecialchars(strip_tags($_POST['destination_location'])) : '';
+  $destination_flight = isset($_POST['destination_flight']) ? htmlspecialchars(strip_tags($_POST['destination_flight'])) : '';
+  $destination_board_and_lodging = isset($_POST['destination_board_and_lodging']) ? htmlspecialchars(strip_tags($_POST['destination_board_and_lodging'])) : '';
+  $destination_visa = isset($_POST['destination_visa']) ? htmlspecialchars(strip_tags($_POST['destination_visa'])) : '';
   $featured = isset($_POST['featured']) ? htmlspecialchars(strip_tags($_POST['featured'])) : 0;
   $top_featured = isset($_POST['top_featured']) ? htmlspecialchars(strip_tags($_POST['top_featured'])) : 0;
-  $video_promotion = htmlspecialchars(strip_tags($_POST['video_promotion']));
-  $destination_gallery = htmlspecialchars($_POST['destination_gallery']);
-  $key_highlights = htmlspecialchars($_POST['key_highlights']);
-  $itenerary = htmlspecialchars($_POST['itenerary']);
+  $video_promotion = isset($_POST['video_promotion']) ? htmlspecialchars(strip_tags($_POST['video_promotion'])) : '';
+  $destination_gallery = isset($_POST['destination_gallery']) ? htmlspecialchars($_POST['destination_gallery']) : '[]';
+  $key_highlights = isset($_POST['key_highlights']) ? htmlspecialchars($_POST['key_highlights']) : '';
+  $itenerary = isset($_POST['itenerary']) ? htmlspecialchars($_POST['itenerary']) : '';
 
   //  Reset all previous top featured 
   //  if current destination is set to top featured
@@ -39,7 +36,12 @@ add_action('save_post_destinations', function($post_id) {
   }
 
   //  Update post metadata
-  update_post_meta($post_id, '_basic_info', $basic_info);
+  update_post_meta($post_id, '_destination_price', $destination_price);
+  update_post_meta($post_id, '_destination_duration', $destination_duration);
+  update_post_meta($post_id, '_destination_location', $destination_location);
+  update_post_meta($post_id, '_destination_flight', $destination_flight);
+  update_post_meta($post_id, '_destination_board_and_lodging', $destination_board_and_lodging);
+  update_post_meta($post_id, '_destination_visa', $destination_visa);
   update_post_meta($post_id, '_top_featured', $featured);
   update_post_meta($post_id, '_featured', $top_featured);
   update_post_meta($post_id, '_video_promotion', $video_promotion);

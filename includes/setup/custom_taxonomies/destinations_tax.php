@@ -84,3 +84,30 @@ register_taxonomy('trip_types', ['destinations'], [
   'show_admin_column' => true,
   'query_var'         => true,
 ]);
+
+register_taxonomy('destinations_tags', ['destinations'], [
+  'labels'                       => [
+    'name'                       => 'Destinations Tags',
+    'singular_name'              => 'Destinations Tag',
+    'menu_name'                  => 'Destinations Tags',
+    'all_items'                  => 'All Destinations Tags',
+    'parent_item'                => 'Parent Destinations Tag',
+    'parent_item_colon'          => 'Parent Destinations Tag:',
+    'new_item_name'              => 'New Destinations Tag Name',
+    'add_new_item'               => 'Add New Destinations Tag',
+    'edit_item'                  => 'Edit Destinations Tag',
+    'update_item'                => 'Update Destinations Tag',
+    'view_item'                  => 'View Destinations Tag',
+    'separate_items_with_commas' => 'Separate Destinations Tags with commas',
+    'add_or_remove_items'        => 'Add or remove Destinations Tags',
+    'choose_from_most_used'      => 'Choose from the most used Destinations Tags',
+    'popular_items'              => 'Popular Destinations Tags',
+    'search_items'               => 'Search Destinations Tags',
+    'not_found'                  => 'No Destinations Tags found.',
+  ],
+  'public'            => true,
+  'hierarchical'      => true,
+  'show_ui'           => true,
+  'show_admin_column' => true,
+  'query_var'         => true,
+]);

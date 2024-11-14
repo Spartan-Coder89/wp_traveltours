@@ -235,23 +235,6 @@ function get_single_destination_key_highlights($id, $is_admin = false) {
   return $return_value;
 }
 
-
-/**
- * Get top featured destination 
- */
-function get_top_featured_destination() {
-
-  $posts = get_posts([
-    'posts_per_page' => -1,
-    'post_type' => 'destinations',
-    'meta_key' => '_top_featured',
-    'meta_value' => 1
-  ]);
-
-  return $posts;
-}
-
-
 /**
  * List social icons and links
  */
