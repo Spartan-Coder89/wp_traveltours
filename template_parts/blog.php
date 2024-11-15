@@ -7,118 +7,23 @@
 <main>
     <?php get_template_part( 'template_parts/inner_page_banner' ); ?>
     <div id="content">
-        <div class="wrap">
+        <div class="wrap" x-data="blog" x-init="update_blog_posts(1)">
             <div id="blog_posts">
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
+
+                <template x-for="(blog_post, index) in blog_posts.posts" :key="index">
+                    <div class="post">
+                        <div class="img" x-bind:style="blog_post.post_thumbnail !== false ? 'background-image: url('+ blog_post.post_thumbnail +')' : ''"></div>
+                        <div class="details">
+                            <p class="date" x-text="blog_post.post_date"></p>
+                            <p class="title" x-text="blog_post.post_title"></p>
+                            <p class="excerpt" x-text="blog_post.post_excerpt"></p>
+                            <a class="read_more" x-bind:href="blog_post.post_link">Read more</a>
+                        </div>
                     </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="img"></div>
-                    <div class="details">
-                        <p class="date">07-13-25</p>
-                        <p class="title">Lorem ipsum dolor sit consectetuer donec justo avenir</p>
-                        <p class="excerpt">Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.</p>
-                        <a class="read_more" href="#">Read more</a>
-                    </div>
-                </div>
+                </template>
+
             </div>
-            <?php get_template_part( 'template_parts/pagination' ); ?>
+            <?php get_template_part( 'template_parts/pagination_blog' ); ?>
         </div>
     </div>
 </main>

@@ -88,7 +88,7 @@
 
                     </template>
                 </div>
-                <?php get_template_part( 'template_parts/pagination' ); ?>
+                <?php get_template_part( 'template_parts/pagination_destinations' ); ?>
             </div>
         </div>
     </div>
