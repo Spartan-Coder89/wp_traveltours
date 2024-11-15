@@ -58,7 +58,7 @@
                     <template x-for="(destination_post, index) in destination_posts.posts">
 
                         <div class="destination">
-                            <div class="img" style="{destination_post.post_thumbnail : background-image: url(destination_post.post_thumbnail)}">
+                            <div class="img" x-bind:style="destination_post.post_thumbnail !== false ? 'background-image: url('+ destination_post.post_thumbnail +')' : ''">
                                 <div class="view_trip_wrap">
                                     <a class="view_trip button" x-bind:href="destination_post.post_link">
                                         <span>View trip</span>
