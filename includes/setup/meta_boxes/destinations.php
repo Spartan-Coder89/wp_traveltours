@@ -174,7 +174,6 @@ add_meta_box(
     $is_top_featured = !empty(get_post_meta($post->ID, '_top_featured', true)) ? get_post_meta($post->ID, '_top_featured', true) : 0;
     $is_top_featured_no = $is_top_featured == 0 ? 'checked' : '';
     $is_top_featured_yes = $is_top_featured == 1 ? 'checked' : '';
-
     ?>
     
     <div id="top_featured_controls_container">
@@ -203,7 +202,6 @@ add_meta_box(
     $is_featured = !empty(get_post_meta($post->ID, '_featured', true)) ? get_post_meta($post->ID, '_featured', true) : 0;
     $is_featured_no = $is_featured == 0 ? 'checked' : '';
     $is_featured_yes = $is_featured == 1 ? 'checked' : '';
-
     ?>
 
     <div id="featured_controls_container">

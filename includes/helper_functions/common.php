@@ -214,21 +214,23 @@ function get_single_destination_key_highlights($id, $is_admin = false) {
 
   if (is_array($key_highlights)) {
 
-    if ($is_admin) {
-      foreach ($key_highlights as $key => $item) {
-        $return_value .= '<li>
-          <span class="dashicons dashicons-remove remove_highlight" data-id="'. $item['id'] .'"></span>
-          <span>'. $item['highlight'] .'</span>
+    foreach ($key_highlights as $key => $item) {
+      if ($is_admin) {
+        
+          $return_value .= '<li>
+            <span class="dashicons dashicons-remove remove_highlight" data-id="'. $item['id'] .'"></span>
+            <span>'. $item['highlight_content'] .'</span>
+          </li>';
+        
+
+      } else {
+        $return_value .= '<li class="highlight">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.6667 22.6667L26.5 12.8333C26.8056 12.5278 27.1944 12.375 27.6667 12.375C28.1389 12.375 28.5278 12.5278 28.8333 12.8333C29.1389 13.1389 29.2917 13.5278 29.2917 14C29.2917 14.4722 29.1389 14.8611 28.8333 15.1667L17.8333 26.1667C17.5 26.5 17.1111 26.6667 16.6667 26.6667C16.2222 26.6667 15.8333 26.5 15.5 26.1667L11.1667 21.8333C10.8611 21.5278 10.7083 21.1389 10.7083 20.6667C10.7083 20.1944 10.8611 19.8056 11.1667 19.5C11.4722 19.1944 11.8611 19.0417 12.3333 19.0417C12.8056 19.0417 13.1944 19.1944 13.5 19.5L16.6667 22.6667Z" fill="#2EC4B6"/>
+            </svg>
+            <p>'. $item['highlight_content'] .'</p>
         </li>';
       }
-
-    } else {
-      $return_value .= '<li class="highlight">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16.6667 22.6667L26.5 12.8333C26.8056 12.5278 27.1944 12.375 27.6667 12.375C28.1389 12.375 28.5278 12.5278 28.8333 12.8333C29.1389 13.1389 29.2917 13.5278 29.2917 14C29.2917 14.4722 29.1389 14.8611 28.8333 15.1667L17.8333 26.1667C17.5 26.5 17.1111 26.6667 16.6667 26.6667C16.2222 26.6667 15.8333 26.5 15.5 26.1667L11.1667 21.8333C10.8611 21.5278 10.7083 21.1389 10.7083 20.6667C10.7083 20.1944 10.8611 19.8056 11.1667 19.5C11.4722 19.1944 11.8611 19.0417 12.3333 19.0417C12.8056 19.0417 13.1944 19.1944 13.5 19.5L16.6667 22.6667Z" fill="#2EC4B6"/>
-          </svg>
-          <p>'. $item['highlight'] .'</p>
-      </li>';
     }
   }
 

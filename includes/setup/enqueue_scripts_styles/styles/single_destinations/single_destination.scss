@@ -157,9 +157,50 @@
                 color: $neutral_600;
             }
 
-            > p {
+            h1 {
+                @include heading_1();
+                font-size: 1.25rem;
+                color: $neutral_600;
+            }
+
+            h2 {
+                @include heading_2();
+                font-size: 1.25rem;
+                color: $neutral_600;
+            }
+
+            h3 {
+                @include heading_3();
+                font-size: 1.25rem;
+                color: $neutral_600;
+            }
+
+            h4 {
+                @include heading_4();
+                font-size: 1.25rem;
+                color: $neutral_600;
+            }
+
+            h5, h6 {
+                @include heading_5();
+                font-size: 1.25rem;
+                color: $neutral_600;
+            }
+
+            > p,
+            a,
+            li,
+            blockquote {
                 @include text_base_400();
                 color: $neutral_500;
+            }
+
+            a {
+                color: $brand_1_900;
+            }
+
+            img {
+                border-radius: 16px;
             }
         }
 

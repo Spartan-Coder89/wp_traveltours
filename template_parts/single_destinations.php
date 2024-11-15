@@ -11,11 +11,7 @@
             <div class="features">
                 <div class="images">
                     <div id="images_carousel">
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
-                        <div class="img"></div>
+                        <?php echo single_destinations_list_gallery(); ?>
                     </div>
                     <div class="fullscreen">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,14 +33,14 @@
                     <div class="pricing">
                         <div>
                             <p class="label">Starts at:</p>
-                            <p class="value">$430/person</p>
+                            <p class="value">$<?php echo get_post_meta(get_the_ID(), '_destination_price', true); ?>/person</p>
                         </div>
                         <div>
                             <p class="label">Duration:</p>
-                            <p class="value">3 days 2 nights</p>
+                            <p class="value"><?php echo get_post_meta(get_the_ID(), '_destination_duration', true); ?></p>
                         </div>
                         <div class="cta">
-                            <a href="#" class="button">
+                            <a href="<?php echo get_site_url() .'/appointment'; ?>" class="button">
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7.5 22.5C6.53333 22.5 5.70833 22.1583 5.025 21.475C4.34167 20.7917 4 19.9667 4 19V6C4 5.03333 4.34167 4.20833 5.025 3.525C5.70833 2.84167 6.53333 2.5 7.5 2.5H20V17.5C19.5833 17.5 19.2293 17.646 18.938 17.938C18.6467 18.23 18.5007 18.584 18.5 19C18.4993 19.416 18.6453 19.7703 18.938 20.063C19.2307 20.3557 19.5847 20.5013 20 20.5V22.5H7.5ZM8 15.5H10V4.5H8V15.5ZM7.5 20.5H16.825C16.725 20.2667 16.646 20.0293 16.588 19.788C16.53 19.5467 16.5007 19.284 16.5 19C16.5 18.7333 16.525 18.475 16.575 18.225C16.625 17.975 16.7083 17.7333 16.825 17.5H7.5C7.06667 17.5 6.70833 17.646 6.425 17.938C6.14167 18.23 6 18.584 6 19C6 19.4333 6.14167 19.7917 6.425 20.075C6.70833 20.3583 7.06667 20.5 7.5 20.5Z" fill="#FFF6EC"/>
                                 </svg>
@@ -55,68 +51,35 @@
                     <div class="info">
                         <div>
                             <p class="label">Location:</p>
-                            <p class="value">Kyoto, Japan</p>
+                            <p class="value"><?php echo get_post_meta(get_the_ID(), '_destination_location', true); ?></p>
                         </div>
                         <div>
                             <p class="label">Flight:</p>
-                            <p class="value">FSC - Full Service Carrier</p>
+                            <p class="value"><?php echo get_post_meta(get_the_ID(), '_destination_flight', true); ?></p>
                         </div>
                         <div>
                             <p class="label">Board and Lodging:</p>
-                            <p class="value">5 Star</p>
+                            <p class="value"><?php echo get_post_meta(get_the_ID(), '_destination_board_and_lodging', true); ?></p>
                         </div>
                         <div>
                             <p class="label">Visa:</p>
-                            <p class="value">Visa processing fee is free of charge</p>
+                            <p class="value"><?php echo get_post_meta(get_the_ID(), '_destination_visa', true); ?></p>
                         </div>
                     </div>
                 </div>
             </div>
             <section class="description">
                 <h2 class="title">Trip Details:</h2>
-                <p>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.
-                    <br>
-                    <br>
-                    Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Donec auctor id purus ac scelerisque. Sed ac nulla at dui luctus consequat. Maecenas dictum maximus purus sed tincidunt.
-                </p>
+                <p><?php echo wpautop(get_the_content()); ?></p>
             </section>
-            <div class="video_promotion">
-                <video controls>
-                    <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            <?php echo single_destinations_video_promotion(); ?>
             <section class="key_highlights">
                 <h2 class="title">Key Highlights</h2>
                 <ul>
-                    <li class="highlight">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.6667 22.6667L26.5 12.8333C26.8056 12.5278 27.1944 12.375 27.6667 12.375C28.1389 12.375 28.5278 12.5278 28.8333 12.8333C29.1389 13.1389 29.2917 13.5278 29.2917 14C29.2917 14.4722 29.1389 14.8611 28.8333 15.1667L17.8333 26.1667C17.5 26.5 17.1111 26.6667 16.6667 26.6667C16.2222 26.6667 15.8333 26.5 15.5 26.1667L11.1667 21.8333C10.8611 21.5278 10.7083 21.1389 10.7083 20.6667C10.7083 20.1944 10.8611 19.8056 11.1667 19.5C11.4722 19.1944 11.8611 19.0417 12.3333 19.0417C12.8056 19.0417 13.1944 19.1944 13.5 19.5L16.6667 22.6667Z" fill="#2EC4B6"/>
-                        </svg>
-                        <p>
-                            Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.
-                        </p>
-                    </li>
-                    <li class="highlight">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.6667 22.6667L26.5 12.8333C26.8056 12.5278 27.1944 12.375 27.6667 12.375C28.1389 12.375 28.5278 12.5278 28.8333 12.8333C29.1389 13.1389 29.2917 13.5278 29.2917 14C29.2917 14.4722 29.1389 14.8611 28.8333 15.1667L17.8333 26.1667C17.5 26.5 17.1111 26.6667 16.6667 26.6667C16.2222 26.6667 15.8333 26.5 15.5 26.1667L11.1667 21.8333C10.8611 21.5278 10.7083 21.1389 10.7083 20.6667C10.7083 20.1944 10.8611 19.8056 11.1667 19.5C11.4722 19.1944 11.8611 19.0417 12.3333 19.0417C12.8056 19.0417 13.1944 19.1944 13.5 19.5L16.6667 22.6667Z" fill="#2EC4B6"/>
-                        </svg>
-                        <p>
-                            Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.
-                        </p>
-                    </li>
-                    <li class="highlight">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.6667 22.6667L26.5 12.8333C26.8056 12.5278 27.1944 12.375 27.6667 12.375C28.1389 12.375 28.5278 12.5278 28.8333 12.8333C29.1389 13.1389 29.2917 13.5278 29.2917 14C29.2917 14.4722 29.1389 14.8611 28.8333 15.1667L17.8333 26.1667C17.5 26.5 17.1111 26.6667 16.6667 26.6667C16.2222 26.6667 15.8333 26.5 15.5 26.1667L11.1667 21.8333C10.8611 21.5278 10.7083 21.1389 10.7083 20.6667C10.7083 20.1944 10.8611 19.8056 11.1667 19.5C11.4722 19.1944 11.8611 19.0417 12.3333 19.0417C12.8056 19.0417 13.1944 19.1944 13.5 19.5L16.6667 22.6667Z" fill="#2EC4B6"/>
-                        </svg>
-                        <p>
-                            Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo. In nec bibendum urna. Donec sed lacinia diam. Mauris leo dolor, egestas ac ex sed, placerat pulvinar ante. In a neque blandit, scelerisque tellus at, dignissim leo.
-                        </p>
-                    </li>
+                    <?php echo get_single_destination_key_highlights(get_the_ID(), $is_admin = false); ?>
                 </ul>
             </section>
-            <section class="itenerary" x-data="itenerary_tabs">
+            <section class="itenerary" x-data="itenerary_tabs" x-init="get_itenerary(<?php echo get_the_ID(); ?>)">
                 <h2 class="title">Itenerary</h2>
                 <div class="itenerary_tab">
 
@@ -156,7 +119,7 @@
                     </svg>
                 </div>
                 <div class="right">
-                    <a href="#" class="button">
+                    <a href="<?php echo get_site_url() .'/appointment'; ?>" class="button">
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.5 22.5C6.53333 22.5 5.70833 22.1583 5.025 21.475C4.34167 20.7917 4 19.9667 4 19V6C4 5.03333 4.34167 4.20833 5.025 3.525C5.70833 2.84167 6.53333 2.5 7.5 2.5H20V17.5C19.5833 17.5 19.2293 17.646 18.938 17.938C18.6467 18.23 18.5007 18.584 18.5 19C18.4993 19.416 18.6453 19.7703 18.938 20.063C19.2307 20.3557 19.5847 20.5013 20 20.5V22.5H7.5ZM8 15.5H10V4.5H8V15.5ZM7.5 20.5H16.825C16.725 20.2667 16.646 20.0293 16.588 19.788C16.53 19.5467 16.5007 19.284 16.5 19C16.5 18.7333 16.525 18.475 16.575 18.225C16.625 17.975 16.7083 17.7333 16.825 17.5H7.5C7.06667 17.5 6.70833 17.646 6.425 17.938C6.14167 18.23 6 18.584 6 19C6 19.4333 6.14167 19.7917 6.425 20.075C6.70833 20.3583 7.06667 20.5 7.5 20.5Z" fill="#FFF6EC"/>
                         </svg>
@@ -171,11 +134,7 @@
 <div id="lightbox">
     <div class="images">
         <div id="lightbox_images_carousel">
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
+            <?php echo single_destinations_list_gallery(); ?>
         </div>
         <div class="close_lightbox">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -41,6 +41,8 @@ function get_top_featured_destination() {
         </section>
     </div>';
   }
+
+  return $return_value;
 }
 
 
@@ -97,8 +99,10 @@ function explore_destinations_list() {
     $post_thumbnail_url = get_the_post_thumbnail_url($post->ID, 'large');
     $permalink = get_the_permalink($post->ID);
 
+    $post_thumbnail = $post_thumbnail_url !== false ? 'style="background-image: url('. $post_thumbnail_url .')"' : '';
+
     $return_value .= '<div class="item">
-        <div class="img" style="background-image: url('. $post_thumbnail_url .')">
+        <div class="img" '. $post_thumbnail .'>
             <a href="'. $permalink .'" class="button">
                 <span>Know more</span>
             </a>

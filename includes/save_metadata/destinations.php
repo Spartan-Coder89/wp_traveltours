@@ -42,8 +42,7 @@ add_action('save_post_destinations', function($post_id) {
   update_post_meta($post_id, '_destination_flight', $destination_flight);
   update_post_meta($post_id, '_destination_board_and_lodging', $destination_board_and_lodging);
   update_post_meta($post_id, '_destination_visa', $destination_visa);
-  update_post_meta($post_id, '_top_featured', $featured);
-  update_post_meta($post_id, '_featured', $top_featured);
+  update_post_meta($post_id, '_featured', $featured);
   update_post_meta($post_id, '_video_promotion', $video_promotion);
   update_post_meta($post_id, '_key_highlights', $key_highlights);
   update_post_meta($post_id, '_itenerary', $itenerary);
@@ -54,7 +53,8 @@ add_action('save_post_destinations', function($post_id) {
 
   if ($featured == 0) {
     update_post_meta($post_id, '_top_featured', 0);
+  } else {
+    update_post_meta($post_id, '_top_featured', $top_featured);
   }
 
-  update_post_meta($post_id, '_featured', $top_featured);
 });
