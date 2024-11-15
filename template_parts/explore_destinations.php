@@ -7,9 +7,9 @@
 <main>
     <?php get_template_part( 'template_parts/inner_page_banner' ); ?>
     <div id="content">
-        <div class="wrap">
+        <div class="wrap" 
+            x-data="destinations">
             <div class="sidebar" 
-                x-data="destinations_sidebar"
                 x-on:resize.window="on_window_resize">
                 <div class="title">
                     <svg id="filters" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -29,479 +29,64 @@
                 <div class="filters" x-cloak x-show="open_filters">
                     <div class="filter range">
                         <p class="label">Price:</p>
-                        <input type="range" min="1" max="150000000">
-                        <p class="value">$5000</p>
+                        <input type="range" min="1" max="10000" 
+                            x-model="destinations_filters.destination_price"
+                            x-on:change="update_filters('destination_price', destinations_filters.destination_price)">
+                        <p class="value" x-text="'$'+ destinations_filters.destination_price"></p>
                     </div>
                     <div class="filter range">
                         <p class="label">Duration:</p>
-                        <input type="range" min="1" max="20">
-                        <p class="value">10 Days</p>
+                        <input type="range" min="1" max="100" 
+                            x-model="destinations_filters.destination_duration"
+                            x-on:change="update_filters('destination_duration', destinations_filters.destination_duration)">
+                        <p class="value" x-text="destinations_filters.destination_duration +' Days'"></p>
                     </div>
-                    <div class="filter checkboxes">
-                        <p class="label">Destinations:</p>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Europe Tours</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Australia Tours</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>USA Tours</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>UK Tours</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Japan Tours</label>
-                        </div>
-                    </div>
-                    <div class="filter checkboxes">
-                        <p class="label">Activities:</p>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Adventure Tours</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Culture Trips</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Family Vacations</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Holiday Vacations</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Ocean Cruise</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Religious Pilgrimage Tours</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>River Cruise</label>
-                        </div>
-                    </div>
-                    <div class="filter checkboxes">
-                        <p class="label">Trip Types:</p>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>All In Tour Packages</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Fixed Departure Tours</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Group Tours</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Land Arrangements Tour</label>
-                        </div>
-                    </div>
-                    <div class="filter checkboxes">
-                        <p class="label">Tags:</p>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Australia Southern Capitals Tour</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Korea Tour</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Japan Tour</label>
-                        </div>
-                        <div class="checkbox_selector">
-                            <input type="checkbox" value="">
-                            <label>Hong Kong Tour</label>
-                        </div>
-                    </div>
+                    <?php echo listout_destinations_taxonomies(); ?>
                 </div>
                 <div class="actions" x-cloak x-show="open_filters">
-                    <a href="#" class="apply_filters button">
+                    <a href="#" class="apply_filters button" x-on:click.prevent="update_destinations(1)">
                         <span>Apply Filters</span>
                     </a>
-                    <a href="#" class="reset_filters button">
+                    <a href="#" class="reset_filters button" x-on:click.prevent="reset_filters()">
                         <span>Reset Filters</span>
                     </a>
                 </div>
             </div>
 
             <div id="destinations_posts_wrap">
-                <div id="destinations_posts">
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
+                <div id="destinations_posts" x-init="update_destinations(1)">
+                    <template x-for="(destination_post, index) in destination_posts.posts">
+
+                        <div class="destination">
+                            <div class="img" style="{destination_post.post_thumbnail : background-image: url(destination_post.post_thumbnail)}">
+                                <div class="view_trip_wrap">
+                                    <a class="view_trip button" x-bind:href="destination_post.post_link">
+                                        <span>View trip</span>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
+                            <div class="destinations_details">
+                                <p class="destination_title" x-text="destination_post.post_title"></p>
+                                <p class="destination_excerpt" x-text="destination_post.post_excerpt"></p>
+                                <div class="details">
+                                    <div class="location">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
+                                            <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span x-text="destination_post.post_destination_location"></span>
+                                    </div>
+                                    <div class="duration">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
+                                        </svg>
+                                        <span x-text="destination_post.post_destination_duration +' Days'"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="destination">
-                        <div class="img">
-                            <div class="view_trip_wrap">
-                                <a href="#" class="view_trip button">
-                                    <span>View trip</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="destinations_details">
-                            <p class="destination_title">Eiffel Tower</p>
-                            <p class="destination_excerpt">
-                                Nulla quis mi mattis, luctus massa id, lobortis sapien. Duis hendrerit feugiat lorem et ullamcorper. Nullam ut lectus augue. Praesent tempus feugiat eros tempor iaculis.
-                            </p>
-                            <div class="details">
-                                <div class="location">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.778 10.7778H11.788V10.7878H11.778V10.7778Z" stroke="#FF9F1C" stroke-width="3.75" stroke-linejoin="round"/>
-                                        <path d="M11.778 21.7778L17.278 16.2778C18.3657 15.19 19.1065 13.8041 19.4066 12.2953C19.7067 10.7865 19.5526 9.22263 18.9639 7.80141C18.3752 6.38018 17.3783 5.16545 16.0992 4.31081C14.8201 3.45616 13.3163 3 11.778 3C10.2397 3 8.73589 3.45616 7.45681 4.31081C6.17774 5.16545 5.18081 6.38018 4.5921 7.80141C4.00339 9.22263 3.84934 10.7865 4.14943 12.2953C4.44952 13.8041 5.19027 15.19 6.278 16.2778L11.778 21.7778Z" stroke="#FF9F1C" stroke-width="2.5" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>Paris, France</span>
-                                </div>
-                                <div class="duration">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM12 6C12.2449 6.00003 12.4813 6.08996 12.6644 6.25272C12.8474 6.41547 12.9643 6.63975 12.993 6.883L13 7V11.586L15.707 14.293C15.8863 14.473 15.9905 14.7144 15.9982 14.9684C16.006 15.2223 15.9168 15.4697 15.7488 15.6603C15.5807 15.8508 15.3464 15.9703 15.0935 15.9944C14.8406 16.0185 14.588 15.9454 14.387 15.79L14.293 15.707L11.293 12.707C11.1376 12.5514 11.0378 12.349 11.009 12.131L11 12V7C11 6.73478 11.1054 6.48043 11.2929 6.29289C11.4804 6.10536 11.7348 6 12 6Z" fill="#FF9F1C"/>
-                                    </svg>
-                                    <span>6 Days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    </template>
                 </div>
                 <?php get_template_part( 'template_parts/pagination' ); ?>
             </div>

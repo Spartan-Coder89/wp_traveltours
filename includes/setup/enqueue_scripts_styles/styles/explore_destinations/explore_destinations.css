@@ -104,6 +104,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  align-items: flex-start;
   -moz-column-gap: 24px;
        column-gap: 24px;
   row-gap: 32px;

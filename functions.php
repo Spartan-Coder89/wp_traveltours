@@ -20,3 +20,4 @@ include_once THEME_DIR .'/includes/customizer/customizer.php';
 include_once THEME_DIR .'/includes/helper_functions/helper_functions.php';
 include_once THEME_DIR .'/includes/save_metadata/save_metadata.php';
 include_once THEME_DIR .'/includes/form_actions/form_actions.php';
+include_once THEME_DIR .'/includes/api/create_api.php';
