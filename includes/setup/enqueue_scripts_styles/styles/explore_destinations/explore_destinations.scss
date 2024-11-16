@@ -85,6 +85,7 @@
 
         #destinations_posts_wrap {
             max-width: 1179px;
+            width: 100%;
 
             #destinations_posts {
                 @include flex();

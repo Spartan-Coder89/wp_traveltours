@@ -99,6 +99,7 @@
 }
 #content .wrap #destinations_posts_wrap {
   max-width: 1179px;
+  width: 100%;
 }
 #content .wrap #destinations_posts_wrap #destinations_posts {
   display: flex;
