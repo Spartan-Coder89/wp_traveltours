@@ -75,7 +75,7 @@ function set_appointment() {
                 <tr id="il5hf" style="box-sizing: border-box;">
                     <td id="istgs" style="box-sizing: border-box; font-size: 12px; font-weight: 300; vertical-align: top; color: rgb(111, 119, 125); margin: 0; padding: 0; text-align: left;" valign="top" align="left">
                     <div id="i4m8t" style="box-sizing: border-box; padding: 10px; font-family: Helvetica, sans-serif; text-align: left; color: #2a2a2a; font-size: 24px; font-weight: 700;">
-                        You have an appointment
+                        Somebody wants to set an appointment
                     </div>
                     <table id="i8gqf" style="box-sizing: border-box; margin: 0px auto 0 auto; padding: 5px 5px 5px 5px; width: 100%;" width="100%">
                         <tbody id="iexoj" style="box-sizing: border-box;">
