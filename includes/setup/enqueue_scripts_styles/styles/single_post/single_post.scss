@@ -32,22 +32,66 @@
             padding-bottom: 16px;
         }
 
-        h2 {
-            @include heading_3();
+        h1 {
+            @include heading_1();
+            font-size: 1.25rem;
             color: $neutral_600;
-            margin-bottom: 16px;
+            margin: 1.25rem 0px;
         }
 
-        p, li {
+        h2 {
+            @include heading_2();
+            font-size: 1.25rem;
+            color: $neutral_600;
+            margin: 1.25rem 0px;
+        }
+
+        h3 {
+            @include heading_3();
+            font-size: 1.25rem;
+            color: $neutral_600;
+            margin: 1.25rem 0px;
+        }
+
+        h4 {
+            @include heading_4();
+            font-size: 1.25rem;
+            color: $neutral_600;
+            margin: 1.25rem 0px;
+        }
+
+        h5, h6 {
+            @include heading_5();
+            font-size: 1.25rem;
+            color: $neutral_600;
+            margin: 1.25rem 0px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        p,
+        li,
+        blockquote {
             @include text_base_400();
             color: $neutral_500;
-            margin-bottom: 16px;
+        }
+
+        a {
+            color: $brand_1_900;
         }
 
         img {
             width: 100%;
             margin-bottom: 16px;
             border-radius: 12px;
+        }
+
+        li {
+            @include text_base_400();
+            color: $neutral_500;
+            margin-bottom: 16px;
         }
 
         ul {

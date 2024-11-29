@@ -30,15 +30,73 @@
 #content .wrap section {
   padding-bottom: 16px;
 }
+#content .wrap h1 {
+  font-size: 3rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: #363D3D;
+  margin: 1.25rem 0px;
+}
 #content .wrap h2 {
+  font-size: 2.25rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: #363D3D;
+  margin: 1.25rem 0px;
+}
+#content .wrap h3 {
   font-size: 1.875rem;
   font-family: "Yeseva One", serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 1.25rem;
   color: #363D3D;
-  margin-bottom: 16px;
+  margin: 1.25rem 0px;
 }
-#content .wrap p, #content .wrap li {
+#content .wrap h4 {
+  font-size: 1.5rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: #363D3D;
+  margin: 1.25rem 0px;
+}
+#content .wrap h5, #content .wrap h6 {
+  font-size: 1.25rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: #363D3D;
+  margin: 1.25rem 0px;
+}
+#content .wrap p {
+  margin-bottom: 1rem;
+}
+#content .wrap p,
+#content .wrap li,
+#content .wrap blockquote {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #4F5655;
+}
+#content .wrap a {
+  color: #2EC4B6;
+}
+#content .wrap img {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 12px;
+}
+#content .wrap li {
   font-size: 1rem;
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
@@ -46,11 +104,6 @@
   font-style: normal;
   color: #4F5655;
   margin-bottom: 16px;
-}
-#content .wrap img {
-  width: 100%;
-  margin-bottom: 16px;
-  border-radius: 12px;
 }
 #content .wrap ul {
   padding-left: 16px;
