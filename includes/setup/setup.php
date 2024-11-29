@@ -232,10 +232,145 @@ add_action('wp_head', function() {
 
 
 /**
- * Add google fonts
+ * Use classic editor
  * ==========================================================================================================================================
  */
 add_filter('use_block_editor_for_post_type', function($current_status, $post_type) {
-    if ($post_type === 'post') return false;
-    return $current_status;
+  if ($post_type === 'post') return false;
+  return $current_status;
 }, 10, 2);
+
+
+/**
+ *  Appointments admin page
+ *  ==========================================================================================================================================
+ */
+add_action('admin_menu', function() {
+  add_menu_page(
+    'Appointments',
+    'Appointments',
+    'manage_options',
+    'appointments',
+    function() { ?>
+      
+      <form action="<?php echo admin_url('admin-post.php') .'?action=appointment_settings'; ?>" method="POST">
+        <div id="meeting_time_settings">
+          <h3>Meeting Time Settings</h3>
+          <table class="form-table" x-data="appointments">
+              <tr>
+                  <th><label>Meeting Time Availability</label></th>
+                  <td>
+                      <div id="add_time">
+                        <div>
+                          <input type="time" id="start_time">
+                          <span>-</span>
+                          <input type="time" id="end_time">
+                        </div>
+                        <button type="button" x-on:click="add_time()">Add time</button>
+                      </div>
+                      <div id="time_availability_list">
+                        <h4>Available Time</h4>
+                        <ul>
+                          <template x-for="(available_time, index) in available_times" :key="index">
+                            <li>
+                              <span x-text="available_time"></span>
+                              <span class="dashicons dashicons-remove remove_time" 
+                                x-bind:data-index="index"
+                                x-on:click="remove_time($event.target.dataset.index)"></span>
+                            </li>
+                          </template>
+                        </ul>
+                      </div>
+                      <input type="hidden" name="available_meeting_time" id="available_meeting_time" value="<?php echo get_user_meta(get_current_user_id(), '_available_meeting_time', true); ?>">
+                  </td>
+              </tr>
+          </table>
+        </div>
+        <div id="meetings">
+          <h3>Appointments</h3>
+            <table class="form-table" x-data="appointments">
+                <tr>
+                    <th><label>Appointments Set</label></th>
+                    <td>
+                      <ul id="appointment_details">
+                        <li>
+                            <div class="appointment_info">
+                              <label>Meeting date:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Meeting time:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Client name:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Email address:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Contact number:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="appointment_info">
+                              <label>Meeting date:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Meeting time:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Client name:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Email address:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Contact number:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="appointment_info">
+                              <label>Meeting date:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Meeting time:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Client name:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Email address:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                            <div class="appointment_info">
+                              <label>Contact number:</label>
+                              <p>asdasdasdasd</p>
+                            </div>
+                        </li>
+                      </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <input type="hidden" name="appointment_settings_nonce" value="<?php echo wp_create_nonce('appointment_settings_nonce'); ?>">
+        <input type="submit" name="submit" id="submit" class="button button-primary" value="Update Appointment Settings">
+      </form>
+
+      <?php
+    },
+    'dashicons-admin-generic',
+    25
+);
+});

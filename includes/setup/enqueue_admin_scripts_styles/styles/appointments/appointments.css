@@ -1,0 +1,48 @@
+#meeting_time_settings {
+  padding: 1em 0px;
+}
+
+#add_time {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+#add_time > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#time_availability_list ul > li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#time_availability_list ul > li .remove_time {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+}
+#time_availability_list ul > li .remove_time:hover {
+  color: #b43c38;
+}
+
+#appointment_details {
+  max-width: 780px;
+  width: 100%;
+}
+#appointment_details > li {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #8c8f94;
+  padding-bottom: 12px;
+}
+#appointment_details > li .appointment_info {
+  padding: 12px;
+  flex: 1 1;
+}
+#appointment_details > li .appointment_info > label {
+  font-weight: 600;
+}/*# sourceMappingURL=appointments.css.map */
