@@ -526,6 +526,8 @@ input[type="range"]:focus::-moz-range-thumb{
 #inner_page_banner {
   background: linear-gradient(90deg, rgba(46,196,182,80%) 100%, rgba(46,196,182,80%) 100%), url($images_uri + '/destinations_heading_bg.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   position: relative;
   @include flex_center();
   padding: 0px 24px;

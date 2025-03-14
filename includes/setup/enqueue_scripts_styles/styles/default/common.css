@@ -507,6 +507,8 @@ input[type=range]:focus::-moz-range-thumb {
 #inner_page_banner {
   background: linear-gradient(90deg, rgba(46, 196, 182, 0.8) 100%, rgba(46, 196, 182, 0.8) 100%), url("http://traveltours.test/wp-content/themes/wp_traveltours/assets/images/destinations_heading_bg.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   position: relative;
   display: flex;
   align-items: center;
