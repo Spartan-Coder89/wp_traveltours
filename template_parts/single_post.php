@@ -9,7 +9,7 @@
     <div id="content">
         <div class="wrap">
             <figure class="featured_img">
-                <img src="<?php echo THEME_URI; ?>/assets/images/sample_image.jpg" alt="">
+                <img src="<?php echo get_the_post_thumbnail( $post->ID); ?>" alt="">
             </figure>
             <?php echo get_the_content($post->ID); ?>
         </div>
