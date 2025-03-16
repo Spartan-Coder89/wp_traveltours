@@ -39,6 +39,12 @@ document.addEventListener('alpine:init', () => {
 
         async update_destinations(page) {
 
+            if (this.destinations_filters.activities.length === 0 && this.destinations_filters.destinations.length === 0 &&
+                this.destinations_filters.destinations_tags.length === 0 && this.destinations_filters.trip_types.length === 0 &&
+                this.destinations_filters.destination_duration === 0 && this.destinations_filters.destination_price === 0) {
+                this.destinations_filters.destination_price = 10000
+            }
+
             let url = rest_api.base +'/destinations/v1/archive/' +'?page='+ page +'&filters='+ JSON.stringify(this.destinations_filters);
 
             let response = await fetch(url);
