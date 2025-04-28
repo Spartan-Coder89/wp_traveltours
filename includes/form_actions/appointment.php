@@ -87,7 +87,7 @@ function set_appointment() {
                             </td>
                             <td id="i42ki" style="box-sizing: border-box; font-size: 12px; font-weight: 300; vertical-align: top; color: rgb(111, 119, 125); margin: 0; padding: 0; width: 50%;" width="50%" valign="top">
                                 <div id="ikuaw" style="box-sizing: border-box; padding: 10px; font-size: 16px; font-family: Helvetica, sans-serif; color: #2a2a2a;">
-                                    11-18-2024
+                                    '. $meeting_date .'
                                 </div>
                             </td>
                         </tr>
@@ -103,7 +103,7 @@ function set_appointment() {
                             </td>
                             <td id="ixr62" style="box-sizing: border-box; font-size: 12px; font-weight: 300; vertical-align: top; color: rgb(111, 119, 125); margin: 0; padding: 0; width: 50%;" width="50%" valign="top">
                                 <div id="i2eii" style="box-sizing: border-box; padding: 10px; font-size: 16px; font-family: Helvetica, sans-serif; color: #2a2a2a;">
-                                    10:00 AM - 11:00 AM
+                                    '. $meeting_time .'
                                 </div>
                             </td>
                         </tr>
@@ -119,7 +119,7 @@ function set_appointment() {
                             </td>
                             <td id="ii4ko" style="box-sizing: border-box; font-size: 12px; font-weight: 300; vertical-align: top; color: rgb(111, 119, 125); margin: 0; padding: 0; width: 50%;" width="50%" valign="top">
                                 <div id="iquny" style="box-sizing: border-box; padding: 10px; font-size: 16px; font-family: Helvetica, sans-serif; color: #2a2a2a;">
-                                    John Smith
+                                    '. $sender_firstname .' '. $sender_lastname .'
                                 </div>
                             </td>
                         </tr>
@@ -135,7 +135,7 @@ function set_appointment() {
                             </td>
                             <td id="i0ork" style="box-sizing: border-box; font-size: 12px; font-weight: 300; vertical-align: top; color: rgb(111, 119, 125); margin: 0; padding: 0; width: 50%;" width="50%" valign="top">
                                 <div id="iwmag" style="box-sizing: border-box; padding: 10px; font-size: 16px; font-family: Helvetica, sans-serif; color: #2a2a2a;">
-                                    jsmith@gmail.com
+                                    '. $sender_email .'
                                 </div>
                             </td>
                         </tr>
@@ -151,7 +151,7 @@ function set_appointment() {
                             </td>
                             <td id="iitzl" style="box-sizing: border-box; font-size: 12px; font-weight: 300; vertical-align: top; color: rgb(111, 119, 125); margin: 0; padding: 0; width: 50%;" width="50%" valign="top">
                                 <div id="ibqtr" style="box-sizing: border-box; padding: 10px; font-size: 16px; font-family: Helvetica, sans-serif; color: #2a2a2a;">
-                                    09123456789
+                                    '. $sender_contact_number .'
                                 </div>
                             </td>
                         </tr>
@@ -169,7 +169,7 @@ function set_appointment() {
                         <tr id="i8b3ig" style="box-sizing: border-box;">
                             <td id="ilfq8r" style="box-sizing: border-box; font-size: 12px; font-weight: 300; vertical-align: top; color: rgb(111, 119, 125); margin: 0; padding: 0; width: 50%;" width="50%" valign="top">
                                 <div id="iebkg5" style="box-sizing: border-box; padding: 10px; font-size: 16px; font-family: Helvetica, sans-serif; color: #2a2a2a;">
-                                    Lorem ipsum dolor sit amit consectetuer
+                                    '. $sender_message .'
                                 </div>
                             </td>
                         </tr>
